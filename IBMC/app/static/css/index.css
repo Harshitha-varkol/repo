@@ -1,0 +1,95 @@
+#icons{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    img{
+        height: 130px;
+        width: 130px;;
+    }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;     /* Stack logo on top, icons below */
+  align-items: center;        /* Center everything horizontally */
+  justify-content: flex-start; /* Keep bank image at top */
+  min-height: 100vh;
+  background: #b3e5fc;        /* Same background */
+  overflow-x: hidden;         /* No horizontal scroll */
+}
+
+/* Bank image (top) */
+
+
+/* Icons container */
+#icons {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 30px;                   /* Gap between icons */
+  justify-items: center;
+  width: 90vw;                 /* Fit inside screen */
+}
+
+/* Each icon */
+#icons img {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+#icons img:hover {
+  transform: scale(1.1);
+}
+
+/* --- Media Queries --- */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  #icons img {
+    width: 80px;
+  }
+}
+
+/* Mobile landscape (≤768px) */
+@media (max-width: 768px) {
+  #icons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  #icons img {
+    width: 65px;
+  }
+}
+
+/* Mobile portrait (≤480px) */
+@media (max-width: 480px) {
+  #icons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  #icons img {
+    width: 50px;
+  }
+}
+#icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* Always 3 columns */
+  gap: 3vh;                               /* Gap relative to screen height */
+  justify-items: center;
+  align-items: center;
+  width: 80vw;                            /* 80% of viewport width */
+  max-width: 90vw;
+}
+
+/* Icon images */
+#icons img {
+  width: 12vw;    /* Scale with viewport width */
+  height: 12vw;   /* Keep square shape */
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+}

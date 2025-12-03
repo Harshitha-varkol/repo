@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% if form %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label>YOUR ACCOUNT NUMBER</label>
+    <input type="text" name="fromacc"><br><br>
+
+    <label>PIN</label>
+    <input type="text" name="pin"><br><br>
+
+    <button>NEXT</button>
+</form>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% else %}
+<h1>Current Balance Available is {{ balance }}</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="fromacc" value="{{ fromacc }}">
+    <input type="hidden" name="pin" value="{{ pin }}">
+
+    <label>RECEIVER ACCOUNT NUMBER</label>
+    <input type="text" name="toacc"><br><br>
+
+    <label>Enter amount to be transferred</label>
+    <input type="text" name="amt"><br><br>
+
+    <button type="submit">PROCEED</button>
+</form>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+
+{% endif %}
+
+{% endblock content %}

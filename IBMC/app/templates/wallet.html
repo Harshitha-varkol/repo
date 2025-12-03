@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+     .spline{
+        height: 400px;
+        width: 400px;
+        
+     }
+</style>
+<div class="over">
+ <h1>take your wallet</h1>
+<spline-viewer url="https://prod.spline.design/hnw5VeFMPCUbs2QJ/scene.splinecode" class="spline"></spline-viewer>
+
+<form action="" method="post">
+   {% csrf_token %}
+   ACCOUNT NUMBER <input type="number" name="acc" id="">
+   <br><br>
+   PIN <input type="password" name="pin" id="">
+   <button type="submit">CHECK BALANCE</button>
+</form>
+{{msg}}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,214 @@
+    /* body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f1f2f6;
+      font-family: Arial, sans-serif;
+    } */
+
+    #w{
+      color: white;
+      text-shadow: 0 0 20px #0c69b1;
+      animation-name: welcome;
+      animation-duration: 500ms;
+    }
+    @keyframes welcome {
+      0%{
+        filter: blur(20px);
+      }
+      50%{
+        filter: blur(10px);
+      }
+      100%{
+        filter: blur(0px);
+      }
+    }
+    main{
+      display: flex;
+      gap: 100px;
+    }
+    
+    .form-group {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      font-size: 14px;
+      background: white;
+    }
+
+    .form-group label {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      padding: 0 5px;
+      color: #666;
+      font-size: 14px;
+      pointer-events: none;
+      transition: 0.3s ease all;
+    }
+
+    /* animation when typing or focused */
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label {
+      top: -8px;
+      left: 8px;
+      font-size: 12px;
+      color:black;
+    }
+
+    #fb{
+      border: 2px solid white;
+      width: 280px;
+      height: 430px;
+      text-align: center;
+      background: white;
+      border-radius: 15px; padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    article>form{
+      position: absolute;
+      top: 20%;
+      text-align: left;
+    }
+    label{
+      font-weight: 600;
+    }
+
+    .account-card {
+      width: 280px; height: 380px;
+      text-align: center;
+      background: white;
+      border-radius: 15px; padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      margin-top: 5%;
+      position: relative;
+      animation-name: ac;
+    }
+    @keyframes ac {
+      0%{
+        transform: translateX(30px)
+      }
+    }
+
+    .avatar {
+      font-size: 70px;
+      margin: 10px auto;
+      animation: bounce 1.5s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .form-box {
+      width: 200px; height: 50px;
+      background: #fff;
+      border: 2px solid #636e72;
+      border-radius: 8px;
+      margin: 20px auto;
+      line-height: 50px;
+      font-weight: bold; color: #2d3436;
+    }
+
+    .register-btn{
+      padding: 10px 25px;
+      border: none; border-radius: 6px;
+      background: #0984e3; color: white;
+      font-weight: bold; cursor: pointer;
+      transition: background 0.3s;
+      margin: 0%;
+    }
+
+    .register-btn:hover { background: #74b9ff; }
+
+    .checkmark {
+      width: 90px; height: 90px; margin: 25px auto;
+      display: none;
+    }
+    .checkmark svg {
+      width: 100%; height: 100%;
+    }
+    .checkmark-circle {
+      stroke: #2ecc71;
+      stroke-width: 4;
+      stroke-dasharray: 157;
+      stroke-dashoffset: 157;
+      stroke-linecap: round;
+    }
+    .checkmark-check {
+      stroke: #2ecc71;
+      stroke-width: 4;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      stroke-linecap: round;
+    }
+
+    .success-text {
+      font-size: 18px; font-weight: bold;
+      color: #2d3436; opacity: 0;
+      margin-top: 10px;
+    }
+
+        /* Toast container */
+    #toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Toast box */
+    .toast {
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: slideIn 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
+    }
+
+    /* Colors */
+    .toast.success {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .toast.error {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .toast.info {
+      background: #cce5ff;
+      color: #004085;
+    }
+
+    /* Slide-in animation */
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to   { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Fade-out handled by JS */
+
+
+    /* Animations */
+    @keyframes circleStroke { to { stroke-dashoffset: 0; } }
+    @keyframes checkStroke { to { stroke-dashoffset: 0; } }
+    @keyframes showText { to { opacity: 1; } }
+

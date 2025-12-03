@@ -1,0 +1,59 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+   div{
+      display: flex;
+   }
+   .cover{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   form{
+      text-align: center;
+   }
+   form article{
+      display: flex;
+      align-items: center;
+   }
+   .pin-box {
+   font-size: 2rem; font-weight: bold;
+   color: #2d3436; text-align: center;
+   animation: blink 1s infinite alternate;
+   }
+   @keyframes blink {
+   from { opacity: 1; }
+   to { opacity: 0.6; }
+   }
+</style>
+
+<div class="cover">
+   <br>
+   <h1>pin generation</h1>
+   <br><br>
+   <div id="genotp">
+      <form action="" method="post">
+         {% csrf_token %}
+         <article><h3>ACCOUNT NUMBER &nbsp;&nbsp;<input type="number" name="acc" id=""></h3></article>
+         <br><br>
+         <button type="submit">GENERATE OTP</button>
+      </form>
+   </div>
+</div>
+<!-- <div class="pin-box">0000</div>
+
+<script>
+let pinBox = document.querySelector(".pin-box");
+let pins = ["0000", "1234", "4567", "7890", "4321"];
+let i = 0;
+
+setInterval(() => {
+  pinBox.textContent = pins[i];
+  i = (i + 1) % pins.length;
+}, 1000);
+</script> -->
+
+
+
+{% endblock content %}

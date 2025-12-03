@@ -1,0 +1,116 @@
+{% extends 'main.html' %}
+{% block content %}
+<br>
+<h1 id="w">WELCOME TO IBMC BANK</h1>
+<br><br>
+<main>
+    <div class="account-card">
+    <div class="account-inner">
+    <div class="avatar">👤</div>
+    <div class="form-box"> ACCOUNT CREATION </div>
+    </div>
+      
+
+      <div class="checkmark" id="check">
+        <svg viewBox="0 0 52 52">
+          <circle class="checkmark-circle" cx="26" cy="26" r="24" fill="none"/>
+          <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
+        </svg>
+        
+      </div>
+      <button type="submit" class="register-btn" form="registerForm">Register</button>
+      <p class="success-text" id="successText">Account Created!</p>
+    </div>
+
+
+    <aside id="fb">
+      <form id="registerForm" action="" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <input type="text" name="name" placeholder=" " required>
+          <label>NAME</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" name="phone" placeholder=" " required>
+          <label>PHONE</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="mail" placeholder=" " required>
+          <label>MAIL</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="add" placeholder=" " required>
+          <label>ADDRESS</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="gen" placeholder=" " required>
+          <label>GENDER</label>
+        </div>
+
+        <div class="form-group">
+          <input type="date" name="date" placeholder=" " required>
+          <label>DOB</label>
+        </div>
+
+        <div class="form-group">
+          <input type="number" name="aadhar" placeholder=" " required>
+          <label>AADHAR</label>
+        </div>
+      </form>
+    </aside>
+
+    {% if messages %}
+      <div id="toast-container">
+        {% for message in messages %}
+          <div class="toast {{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+
+      <script>
+        // Auto-hide toasts after 3 seconds
+        setTimeout(() => {
+          document.querySelectorAll(".toast").forEach(toast => {
+            toast.style.opacity = "0";
+            setTimeout(() => toast.remove(), 500); // remove from DOM after fade out
+          });
+        }, 3000);
+      </script>
+    {% endif %}
+
+
+</main>
+{% if messages %}
+  {% for message in messages %}
+    {% if "success" in message.tags %}
+      <script>
+        window.addEventListener("DOMContentLoaded", function() {
+          let check = document.getElementById("check");
+          let successText = document.getElementById("successText");
+          let circle = check.querySelector(".checkmark-circle");
+          let tick = check.querySelector(".checkmark-check");
+          let formBox = document.getElementById("fb");
+          let registerBtn = document.querySelector(".register-btn");
+
+          registerBtn.style.display = "none";
+          check.style.display = "block";
+          formBox.style.display = "none";
+
+          circle.style.animation = "circleStroke 0.8s ease forwards";
+          tick.style.animation = "checkStroke 0.5s ease forwards 0.8s";
+          successText.style.animation = "showText 1s ease forwards 1.4s";
+        });
+      </script>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+
+
+{% endblock content %}
