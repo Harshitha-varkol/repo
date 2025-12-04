@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Book Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background-color: #16a34a;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #15803d;
+    }
+
+    .cancel {
+      display: block;
+      width: 100%;
+      background-color: #ef4444;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .cancel:hover {
+      background-color: #dc2626;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Edit Book Details</h2>
+    <form method="post">
+      {% csrf_token %}
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" value="{{ book.name }}" required>
+
+      <label for="author">Author</label>
+      <input type="text" id="author" name="author" value="{{ book.author }}" required>
+
+      <label for="genre">Genre</label>
+      <input type="text" id="genre" name="genre" value="{{ book.genre }}" required>
+
+      <label for="price">Price</label>
+      <input type="number" id="price" name="price" value="{{ book.price }}" required>
+
+      <label for="available">Available</label>
+      <textarea id="available" name="available" required>{{ book.available }}</textarea>
+
+      <button type="submit" class="btn">Update</button>
+      <a href="{% url 'edit' book.id %}" class="cancel">Cancel</a>
+    </form>
+  </div>
+</body>
+</html>

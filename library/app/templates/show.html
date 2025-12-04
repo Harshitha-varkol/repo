@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: green;
+        }
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #1e90ff;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0b72cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        {%for book in books %}
+        <p><strong>name:</strong> {{ book.name }}</p>
+        <p><strong>author:</strong> {{ book.author }}</p>
+        <p><strong>genre:</strong> {{ book.genre }}</p>
+        <p><strong>price:</strong> {{ book.price }}</p>
+        <p><strong>available:</strong> {{ book.available }}</p>
+        <a href="{% url 'home' %}">BACK</a> 
+        <a href="{% url 'edit' book.id %}">EDIT</a>
+
+        {% endfor %}
+    </div>
+</body>
+</html>
+
