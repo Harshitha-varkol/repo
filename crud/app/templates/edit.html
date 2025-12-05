@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Details</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label>Name</label>
+            <input type="text" name="name" value="{{ user.name }}" required>
+
+            <label>Branch</label>
+            <input type="text" name="branch" value="{{ user.branch }}" required>
+
+            <label>Marks</label>
+            <input type="number" name="marks" value="{{ user.marks }}" required>
+
+            <label>Age</label>
+            <input type="number" name="age" value="{{ user.age }}" required>
+
+            <label>Address</label>
+            <textarea name="address" rows="3" required>{{ user.address }}</textarea>
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>
