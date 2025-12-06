@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: "Amazon Ember", Arial, sans-serif;
+        /* background-color: black; */
+    }
+    nav{
+        height:60px;
+        background-color: black;
+        color: white;
+    }
+    nav ol{
+        display: flex;
+        list-style: none;
+        gap:30px;
+        padding: 10px;
+
+    }
+    nav img{
+        height: 30px;
+        width:100px;
+        margin-top: 3px;
+    }
+    nav li:hover{
+        border: 2px solid;
+    }
+    #search{
+        position: relative;
+        right: 6%;
+        top:17%;
+        color: black;
+        font-size: 35px;
+        background-color: rgb(255, 166, 0);
+    }
+    #cart{
+        font-size: 40px;
+    }
+    #women{
+        color: blue;
+    }
+    nav button{
+        width: 40px;
+        height:40px
+    }
+    #p1{
+        color: white;
+        margin-left: 100%;
+        margin-top: -33%;
+        font-size: 15px;
+        font-weight: 500;   
+    }
+    #line1{
+        padding: 10px;
+    }
+    #line2{
+        display: flex;
+    }
+    o{
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    #line2 p{
+        font-size: 18px;
+        font-weight: 800;
+    }
+    #line2 font{
+        opacity: 0.6;
+    }
+    input{
+        width:600px;
+        height:37px;
+        margin-top: 5px;
+        border-radius: 5px;
+
+    }
+    #sec0{
+        height: 40px;
+        border: 2px red;
+        background-color: #232f3E;
+        color: white;
+
+    }
+    #sec0 ol{
+        display: flex;
+        gap:1px;
+        word-spacing: 0px;
+        letter-spacing: 0px;
+        list-style: none;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 530;   
+    }
+    #sec0 span{
+        font-size: 8px;
+    }
+    #sec0 img{
+        width:370px;
+        height:40px;
+        margin-top: -10px;
+        margin-left: 80px;
+    }
+    #sec1{
+        height:50px;
+        background-color: white;
+        color: black;
+        /* border: 2px solid; */
+    }
+    #sec1 ol{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        font-size: 13px;
+        padding: 15px;
+        /* font-weight: 100; */
+    }
+    #amazon{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    #sec2{
+        height: 200px;
+        display: flex;
+    }
+    #sec2 div{
+        display: flex;
+    }
+    #sec2 img{
+        height: 150px;
+        width: 100px;
+    }
+    #sec3{
+        height: 200px;
+        /* border: 2px solid; */
+    }
+    #sec3 img{
+        width: 1348px;
+    }
+    #sec4{
+        height: 400px;
+        /* border: 2px solid; */
+    }
+    #sec5{
+        height: 277px;
+        /* border: 2px solid; */
+    }
+    #sec5 img{
+        width: 1348px;
+ 
+    }
+    h4{
+        font-size: 30px;
+        font-weight: 900;
+    }
+    #aside{
+        height: 60px;
+        /* border: 2px solid red;  */
+        background-color: white;
+    }
+    #aside div{
+        background-color: #232f3E;
+        margin-top: 15px;
+        color: white;
+    }
+    aside h1{
+        font-size: 25px;
+        text-align: center;
+        font-weight: 600;
+    }
+    #sec6{
+        height:280px;
+        /* border: 2px solid; */
+
+    }
+    #sec6 img{
+        width: 1348px;
+        /* height: 300px; */
+    }
+    #sec7 img{
+        width: 300px ;
+        height: 300px;
+    }
+    #sec7 div{
+        display: flex;
+    }
+    #sec8 img{
+        width: 300px ;
+        height: 300px;
+    }
+    #sec8 div{
+        display:flex;
+    }
+     #sec9 img{
+        width: 300px ;
+        height: 300px;
+    }
+    #sec9 div{
+        display:flex;
+    }
+    #sec7{
+        height:60px;
+        background-color: black;
+        opacity: 0.8;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        font-size: 14px;
+     }
+     footer{
+        border: 2px solid  black;
+        height:190px;
+        background-color: #0F1111;
+        color: white;
+     }
+     footer section{
+        display:grid;
+        grid-template-columns: 200px 200px 200px 200px;
+     }
+     footer h5{
+        font-size: 11px;
+        font-weight: 700;
+     }
+     footer p{
+        font-size: 11px;
+        font-weight: 300;
+        opacity: 0.7;
+     }
+     #foot{
+        /* border: 2px solid; */
+        height: 170px;
+        margin-left: 14%;
+        margin-top: 3%;
+        background-color: #0F1111;
+     }
+     #last{
+        height:100px;  
+        background-color: black;
+        /* border: 2px dotted violet; */
+     }
+     #last p{
+        font-size: 11px;
+        font-weight: 500;
+        text-align: center;
+        color: rgb(224, 215, 215);
+        padding:35px;
+     }
+     #sec8{
+        height: 350px;
+        background-color: black;
+        display: flex;
+        color: #DDDDDD;
+        /* gap:100px; */
+     }
+     #sec8 div{
+        display: flex;
+        gap: 100px;
+        font-size: 13px;
+        line-height: 25px;
+     }
+     #left{
+        position: relative;
+        left: 13%;
+        /* top:10%; */
+        background-color: #0F1111;
+     } 
+     #sec8 ol{
+        list-style: none;
+     }
+     .highlight{
+        font-size: 16px;
+        font-weight: 800;
+        color: white;
+     }
+     #sec10{
+        border: 2px solid gainsboro;
+        height:130px;
+        display: flex;
+        gap:30px;
+        background-color: #162536;
+     }
+     #sec10 img{
+        width: 70px;
+        height: 30px;
+        margin-top: 90%;
+        color: white;
+        
+        background-color: #232f3E;
+     }
+     #sec10 div{
+        position: relative;
+        left:38%;
+     }
+     #btns{
+        padding: 50px;
+        background-color: #162536;
+     }
+     #sec10 button{
+        width:130px;
+        height: 40px;
+        background-color: black;
+        color: #DDDDDD;
+        border: 2px solid #DDDDDD;
+        font-size: 14px;
+     }
+</style>
+<body>
+    {% include 'nav1.html' %}
+    {% block content %}
+
+    {% endblock content %}
+    {% include 'footer.html' %}
+</body>
+</html>

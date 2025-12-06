@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: "Amazon Ember", Arial, sans-serif;
+    }
+    nav{
+        height:60px;
+        background-color: black;
+        color: white;
+    }
+    nav ol{
+        display: flex;
+        list-style: none;
+        gap:28px;
+        padding: 10px;
+
+    }
+    nav img{
+        height: 30px;
+        width:100px;
+        margin-top: 3px;
+    }
+    nav li:hover{
+        border: 2px solid;
+    }
+    #search{
+        position: relative;
+        right: 6%;
+        top:17%;
+        color: black;
+        font-size: 35px;
+        background-color: rgb(255, 166, 0);
+    }
+    #cart{
+        font-size: 40px;
+    }
+    nav button{
+        width: 40px;
+        height:40px
+    }
+    #p1{
+        color: white;
+        margin-left: 100%;
+        margin-top: -33%;
+        font-size: 15px;
+        font-weight: 500;   
+    }
+    #line1{
+        padding: 10px;
+    }
+    #line2{
+        display: flex;
+    }
+    o{
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    #line2 p{
+        font-size: 18px;
+        font-weight: 800;
+    }
+    #line2 font{
+        opacity: 0.6;
+    }
+    input{
+        width:600px;
+        height:37px;
+        margin-top: 5px;
+        border-radius: 5px;
+
+    }
+    #sec0{
+        height: 40px;
+        border: 2px red;
+        background-color: #232f3E;
+        color: white;
+
+    }
+    #sec0 ol{
+        display: flex;
+        gap:18px;
+        word-spacing: 0px;
+        letter-spacing: 0px;
+        list-style: none;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 530;   
+    }
+    #sec0 span{
+        font-size: 8px;
+    }
+    #sec0 img{
+        width:370px;
+        height:40px;
+        margin-top: -10px;
+        margin-left: 80px;
+    }
+    #sec0 a{
+        text-decoration: none;
+        color: white;
+    }
+    #sec1{
+        height:250px;
+    }
+    #sec2{
+        display: flex;
+        gap:10px;
+    }
+    #sec2 article{
+        gap:20px;
+    }
+    .div1{
+        width:300px;
+        height:300px;
+        font-size: 20px;
+    }
+    .div1 h2{
+        font-size: 20px;
+    
+    }
+    .div2{
+        margin-left: 12%;
+    }
+    .div2 h2{
+        font-size: 20px;
+
+    }
+    .div2 button{
+        width: 190px;
+        height:30px;
+        border-radius: 50px;
+    }
+    #img1{
+        width:230px;
+        height:250px;
+    }
+    .img2{
+        width:130px;
+    }
+    .img3{
+        width: 200px;
+        height: 200px;
+        margin-left: 5%;
+    }
+     article{
+        display: grid;
+        grid-template-columns: 160px 160px;
+     }
+     article img{
+        width:163px;
+        height: 102px;
+     }
+     .ar1{
+        margin-left: 25%;
+     }
+     #sec2 h2{
+        font-size: 19px;
+        font-weight: 600;
+     }
+     #sec2 p{
+        font-size: 15px;
+        font-weight: 600;
+     }   
+    .ar0{
+      margin-left: 20%;
+    }
+    #sec2 button{
+        background-color: yellow;
+    }
+    #sec2{
+        position: relative;
+        top: -120%;
+        background-color:rgb(243, 69, 5);
+    }
+     #sec3{
+        width:100px;
+        height:100px;
+        /* display: flex; */
+     }
+     .cor1{
+        display:flex;
+        /* justify-content: space-around; */
+     }
+     #sec4{
+        height: 210px;
+        /* border: 2px solid blueviolet; */
+        margin-top: -22%;
+        background-color: gainsboro;
+        /* display: flex; */
+     }
+     .rot1{
+        width:220px;
+        height:200px;
+     }
+     #carousel-inner{
+        font-size: 10px;
+        display: flex;
+     }
+     footer{
+        border: 2px solid  black;
+        height:190px;
+        background-color: black;
+        color: white;
+     }
+     footer section{
+        display:grid;
+        grid-template-columns: 200px 200px 200px 200px;
+     }
+     footer h5{
+        font-size: 11px;
+        font-weight: 700;
+     }
+     footer p{
+        font-size: 11px;
+        font-weight: 300;
+        opacity: 0.7;
+     }
+     #foot{
+        /* border: 2px solid; */
+        height: 170px;
+        margin-left: 14%;
+        margin-top: 3%;
+     }
+     #last{
+        height:100px;  
+        background-color: black;
+        /* border: 2px dotted violet; */
+     }
+     #last p{
+        font-size: 11px;
+        font-weight: 500;
+        text-align: center;
+        color: rgb(224, 215, 215);
+        padding:35px;
+     }
+     #sec10{
+        border: 2px solid gainsboro;
+        height:130px;
+        display: flex;
+        gap:30px;
+        background-color: #232f3E;
+     }
+     #sec10 img{
+        width: 70px;
+        height: 30px;
+        margin-top: 90%;
+        color: white;
+        
+        /* background-color: #232f3E; */
+     }
+     #sec10 div{
+        position: relative;
+        left:38%;
+     }
+     #btns{
+        padding: 50px;
+     }
+     #sec10 button{
+        width:130px;
+        height: 40px;
+        background-color: #232f3E;
+        color: #DDDDDD;
+        border: 2px solid #DDDDDD;
+        font-size: 14px;
+     }
+     #sec8{
+        height: 350px;
+        background-color: #232f3E;
+        display: flex;
+        color: #DDDDDD;
+        /* gap:100px; */
+     }
+     #sec8 div{
+        display: flex;
+        gap: 100px;
+        font-size: 13px;
+        line-height: 25px;
+     }
+     #left{
+        position: relative;
+        left: 13%;
+        top:13%;
+     } 
+     #sec8 ol{
+        list-style: none;
+
+
+    li::hover{
+        cursor: pointer;
+    }    
+     }
+     .highlight{
+        font-size: 16px;
+        font-weight: 800;
+        color: white;
+     }
+     #sec7{
+        height:60px;
+        background-color: #0F1111;
+        opacity: 0.8;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        font-size: 14px;
+     }
+     #sec6{
+        height:90px;
+        background-color: white;
+        text-align: center;
+        /* background-color: #0F1111; */
+     }
+     #sec6 h2{
+        font-size: 24px;
+        font-weight: 600;
+        font-family: "Amazon Ember", Arial, sans-serif;
+     }
+     #sec6 button{
+        width: 213px;
+        height:30px;
+        font-size: 13px;
+        border-radius: 50px;
+        background-color: yellow;
+        border: yellow;
+     }
+     #sec6 p{
+        font-size: 11px;
+     }
+     #sec6 font{
+        color: blue;
+     }
+     hr{
+        /* font-size: 200px; */
+        color: gray;
+        font-weight: 900;
+        
+     }
+     #sec5 img{
+        height: 200px;
+        width: 250px;
+     }
+     #sec5 main{
+        display: flex;
+        gap:7%;
+        margin-top: 8%;
+        border: 2px solid gainsboro;
+        margin-left: 8%;
+        width:1150px;
+        background-color: white;
+     }
+     #sec5{
+        border: 2px solid gainsboro;
+        height: 400px;
+        background-color: gainsboro;
+     }
+     #sec5 p{
+        font-size: 15px;
+        font-weight: 600;
+     }
+     #sec5 figcaption{
+        color: yellow;
+     }
+     #sec5 article button{
+        color: rgb(236, 7, 83);
+        width:60px;
+     }
+    #sec5 article section{
+        color:  rgb(236, 7, 83);
+        position: relative;
+        right: 70%;
+    }
+    #sec5 figure{
+        color: blue;
+        font-size: 17px;
+    }
+    #bt{
+        border-radius: 50px;
+        width:100px;
+        background-color: yellow;
+        border: 2px solid yellow;
+    }
+    #sec11{
+        display: flex;
+        background-color: gainsboro;
+    }
+    #sec11 article{
+        background-color: white;
+        width: 300px;
+        height: 300px;
+    }
+    #sec12 div{
+        height: 200px;
+        display: flex;
+    }
+    #sec12 img{
+        width: 200px;
+        height: 200px;
+    } 
+    #sec11 p{
+        font-size: 15px;
+        font-weight: 700;
+    }
+</style>
+<body>
+    <!-- {% block content%} -->
+
+
+    <nav>
+        <ol>
+            <li id="line1">
+                <img src="https://imgs.search.brave.com/uc0mFNntgN6ovyUQKDhY2OFOw5qEb5Pp-P3H9V7cTvE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/YnJhbmRmZXRjaC5p/by9pZGF3T2dZT3NH/L3RoZW1lL2xpZ2h0/L2xvZ28uc3ZnP2M9/MWJ4aWQ2NE11cDdh/Y3pld1NBWU1YJnQ9/MTcyMDE2NjQyMjcx/MQ" alt=""><p id="p1">.in</p>
+            </li>
+            <li id="line2" >
+                <o>
+                    <i class='bx bx-map'></i>
+                </o>
+                <div>
+                <font>
+                    Delivering to hyderabad
+                </font>
+                <p>
+                  update location
+                </p>                              
+                </div>
+            </li>
+            <li>
+               <li>  <input type="text" name="" id="" placeholder="Search Amazon.in"> <i class='bx bx-search' id="search"></i> </li>
+            </li>
+            <li><button>EN</button></li>
+            <li>
+            </li>
+            <li> 
+                Returns &<br>
+                orders
+            </li>
+            <li id="cart"><i class='bx bx-cart'></i></li>
+        </ol>
+    </nav>
+    <section id="sec0">
+         <ol>
+            <li><i class='bx bx-menu'></i><font>All</font></li>
+            <li>Fresh <span><i class='bx bxs-down-arrow'></i></span>
+            </li>
+            <a href="{% url 'mxplayer1' %}"> <li>MX player</li> </a>
+            <li>Sell</li>
+            <li>Best sellers</li>
+            <li>Today's Deals</li>
+            <li>Mobiles</li>
+            <li>Prime <span><i class='bx bxs-down-arrow'></i></span> </li>
+            <li>Customer Service</li>
+            <a href="{% url 'fashion1' %}"><li>Fashion</li></a>
+            <li>New Releases</li>
+            <li><img src="https://m.media-amazon.com/images/G/31/IN-Events/Shankhadip/AugArt24_Logo_75x75/AugART_PC_SWM_live_now_1x_v4._CB804614378_.jpg" alt=""></li>
+         </ol>
+         <!-- <img src="https://m.media-amazon.com/images/G/31/IN-Events/Shankhadip/AugArt24_Logo_75x75/AugART_PC_SWM_live_now_1x_v4._CB804614378_.jpg" alt=""> -->
+    </section>
+        <div id="sec1">
+            <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+             <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Events/img25/Nimesh/AugART_8PM_PC_H1_v2_2x._CB804854772_.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Beauty/GW/TBSJuly/Updated/TBS_GW_PC-1._CB789165491_.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://images-eu.ssl-images-amazon.com/images/G/31/2025/Auto/AugArt/GW/Main/3000x1200-Car-bike-parts--accessories-fdfo._CB804867227_.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+                <!-- <div class="carousel-item">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Consumables/Baby2025/July25/ART/Hero/Category_Hero_-_Asin_PC_Leo_3000_1200_2._CB805002182_.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/WLA/2025/AugART_25/GW/Unrec/D278613793_IN_WLA_AugART25_Gateway_Category-PC_Hero_3000x1200_Asin._CB805225484_.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/WLA/2025/AugART_25/GW/Unrec/D278613793_IN_WLA_AugART25_Gateway_Category-PC_Hero_3000x1200_Asin._CB805225484_.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Wireless/Isha/Xiaomi/AUGart/GWPEA/Category-PC_Hero_3000x1200Lifestyle-._CB805023512_.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Fresh/GW/AugART25/Event/SVD/Ambient/1st_GW_PC1x_Hero_NC._CB804849089_.jpg" class="d-block w-100" alt="...">
+                  </div> -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+       </div>
+         <br> <br>
+        <section id="sec2">
+            <div class="div1">
+                <h2>Up to 75% off | Electronics <br>& Accessories</h2>
+                <img id="img1" src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/CEPC/Tablets/Hero/Associatess/PC_CC_758x60810.5x._SY304_CB804957162_.jpg" alt="">
+            </div>
+            <div class="div1">
+                <h2 class="ar0">Up to 80% off | Home, <br> kitchen & more</h2>
+                <article class="ar0">
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-1-1x_Kitchen._SY116_CB804590709_.jpg" alt="">
+                        <p>kitchen essentials</p>
+                    </div>
+                    <div>
+                        <img class="img2"src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-2-1x_home._SY116_CB804590709_.jpg" alt="">
+                        <p>Home decor</p>
+                    </div>
+                    <div>
+                       <img class="img2"src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-3-1x_Furniture._SY116_CB804590709_.jpg" alt="">
+                        <p>Furniture</p>
+                    </div>
+                    <div>
+                       <img class="img2"src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-4-1x_HI._SY116_CB804590709_.jpg" alt="">
+                        <p>Home improvement</p>
+                    </div>
+                </article>
+            </div>
+            <div class="div1">
+               <h2 class="ar1">Up to 65% off | Offers on <br>home appliances</h2>
+                <article class="ar1" >
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/dharshini/CH_1400/PC_QC_372x232-1_WM_1x._SY116_CB804785665_.jpg" alt="">
+                        <p>Washing machine</p>
+                    </div>
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/dharshini/CH_1400/PC_QC_372x232-1_Ref_1x._SY116_CB804785665_.jpg" alt="">
+                        <p>Refridgerators</p>
+                    </div>
+                    <div>
+                       <img class="img2"src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/dharshini/CH_1400/PC_QC_372x232-1_AC_1x._SY116_CB804785665_.jpg" alt="">
+                        <p>Air conditioners</p>
+                    </div>
+                    <div>
+                       <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/dharshini/CH_1400/PC_QC_372x232-1_CH_1x._SY116_CB804785665_.jpg" alt="">
+                        <p>chinmeys</p>
+                    </div>
+                    </article>
+            </div>
+            <br><br><br>
+            <div class="div2">
+               <h2>Sign in for your best <br> experience</h2>
+               <button>sign in Securely</button>
+               <img id="img3" src="https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/45e0177a-7298-4412-aecb-14e328518137.jpg" alt="">
+            </div>
+        </section>
+        <br><br>
+        <section id="sec4">
+            <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/71a0mwTxooL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/61aM36RGwgL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/61KKxQiKA+L._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/81GgEhnkx7L._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/718ou0YnWIL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/61ITlnte9uL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+  
+                      </div>
+                      <div class="carousel-item">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/81BNQrU7lYL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/714THosaxdL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/81SEVBzTWhL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/61wURjcgIEL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/813RG-5ObbL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/71zSI8ZHvgL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/71zSI8ZHvgL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/81g3zQi9KcL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/61hqslwdSLL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/61Sd7koV9iL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/71775fRr+gL._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                        <img class="rot1" src="https://m.media-amazon.com/images/I/61mzpWMcN-L._AC_SY200_.jpg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+            </div>
+        </section>
+        <br><br>
+        <section id="sec12">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_1._CB804961893_.jpg" class="d-block w-100" alt="...">
+                
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_2._CB804961893_.jpg" class="d-block w-100" alt="...">
+                
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_3._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_4._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_5._CB804961893_.jpg" class="d-block w-100" alt="...">
+            
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_6._CB804961893_.jpg" class="d-block w-100" alt="...">
+        
+ 
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_5._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_6._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_7._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_8._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_9._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_10._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_5._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_6._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_7._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_8._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_9._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Wireless/Mounika/Desktop/AugART/D280189136_IN_WLD_AUGART_25_MSO_PC_Shoveler_200x200_10._CB804961893_.jpg" class="d-block w-100" alt="...">
+                    
+                    <p></p>
+                  </div>
+                </div>
+            </div>
+        </section>
+<br><br>
+        <section id="sec11">
+            <h1></h1>
+            <div>
+                <article class="ar1" >
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/Img2025/SMB/AugART/Homepage/GBF_QC_1x_Home._SY116_CB804865022_.jpg" alt="">
+                        <p>Washing machine</p>
+                    </div>
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/Img2025/SMB/AugART/Homepage/GBF_QC_1x_Kitchen._SY116_CB804865022_.jpg" alt="">
+                        <p>Refridgerators</p>
+                    </div>
+                    <div>
+                       <img class="img2"src="https://images-eu.ssl-images-amazon.com/images/G/31/Img2025/SMB/AugART/Homepage/GBF_QC_1x_Beauty._SY116_CB804865022_.jpg" alt="">
+                        <p>Air conditioners</p>
+                    </div>
+                    <div>
+                       <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/Img2025/SMB/AugART/Homepage/GBF_QC_1x_Explore_All._SY116_CB804865022_.jpg" alt="">
+                        <p>chinmeys</p>
+                    </div>
+                    </article>
+            </div>
+            <div>
+                <article class="ar1" >
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/Img2025/SMB/AugART/Homepage/Desktop_QC_1x_Decor._SY116_CB804969306_.jpg" alt="">
+                        <p>Washing machine</p>
+                    </div>
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/Img2025/SMB/AugART/Homepage/Desktop_QC_1x_Clothing._SY116_CB804969306_.jpg" alt="">
+                        <p>Refridgerators</p>
+                    </div>
+                    <div>
+                       <img class="img2"src="https://images-eu.ssl-images-amazon.com/images/G/31/Img2025/SMB/AugART/Homepage/Desktop_QC_1x_Cushions._SY116_CB804969306_.jpg" alt="">
+                        <p>Air conditioners</p>
+                    </div>
+                    <div>
+                       <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/Img2025/SMB/AugART/Homepage/Desktop_QC_1x_Beauty._SY116_CB804969306_.jpg" alt="">
+                        <p>chinmeys</p>
+                    </div>
+                    </article>
+            </div>
+            <div>
+                <article class="ar1" >
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG_22/art/aug25/ain/gw/Electronics4_186_116_2807._SY116_CB804806045_.jpg" alt="">
+                        <p>Washing machine</p>
+                    </div>
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG_22/art/aug25/ain/gw/Home_Kitchen_5_186_116_2807._SY116_CB804805737_.jpg" alt="">
+                        <p>Refridgerators</p>
+                    </div>
+                    <div>
+                       <img class="img2"src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG_22/art/aug25/ain/gw/3_186_116_2807._SY116_CB804802534_.jpg" alt="">
+                        <p>Air conditioners</p>
+                    </div>
+                    <div>
+                       <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG_22/art/aug25/ain/gw/AB_Logo_186_116_2807._SY116_CB805024422_.jpg" alt="">
+                        <p>chinmeys</p>
+                    </div>
+                    </article>
+            </div>
+            <div>
+                <article class="ar1" >
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-5-1x_sports._SY116_CB804590709_.jpg" alt="">
+                        <p>Washing machine</p>
+                    </div>
+                    <div>
+                        <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-6-1x_Auto._SY116_CB804590709_.jpg" alt="">
+                        <p>Refridgerators</p>
+                    </div>
+                    <div>
+                       <img class="img2"src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-7-1x_Tools._SY116_CB804590709_.jpg" alt="">
+                        <p>Air conditioners</p>
+                    </div>
+                    <div>
+                       <img class="img2" src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL/PAYAL/GW/AugART25/PC_QC_372x232-8-1x_LG._SY116_CB804590709_.jpg" alt="">
+                        <p>chinmeys</p>
+                    </div>
+                    </article>
+            </div>
+                    </section>
+        <section id="sec5">
+            <main>
+            <div>
+                <img src="https://m.media-amazon.com/images/I/61Htbmx+mrL.jpg" alt="">
+            </div>
+            <div>
+                 <img src="https://m.media-amazon.com/images/I/61uoj4fda7L.jpg" alt="">
+            </div>
+            <div>
+                    <p>Ibell 3OYO Induction Cooktop,2000w,2yr.....</p>
+                    <figcaption><i class='bx bxs-star' ></i><i class='bx bxs-star' ></i><i class='bx bxs-star' ></i><i class='bx bxs-star' ></i><i class='bx bxs-star' ></i></figcaption>
+                    <article><button>65%off</button><section>Freedom sale Deal</sectio></article>
+                   <aside><font>₹1345</font><strike>₹3,890</strike> <figure>prime</figure></aside>                    
+                    <button id="bt">shop now</button>
+            </div>
+            </main>
+        </section>
+        <hr>
+        <section id="sec6">
+            <h2>See personalized recommendations</h2>
+            <button>sign in</button>
+            <p>New Customer?<font><u>Start here </u></font></p>
+        </section>
+        <hr>
+        <br>
+        <section id="sec7">
+            <p><a href=""></a>Back to top</p>
+        </section>
+        <section id="sec8">
+            <div id="left">
+             <div>
+                <ol>
+                    <li class="highlight">Get to Know <br>Us</li>
+                    <li>About Amazon</li> 
+                   <li>Careers</li>
+                   <li>Press Releases </li> 
+                   <li>Amazon Science</li> 
+                </ol>   
+             </div>
+             <div>
+
+                <ol>
+                    <li class="highlight">Connect with <br> Us</li>
+                    <li>Facebook</li>
+                    <li>Twitter </li>
+                    <li>Instagram</li>
+                </ol>
+             </div>
+             <div>
+                <ol>
+                    <li class="highlight">Make Money with Us</li>
+                    <li>Sell on Amazon</li>
+                    <li>Sell under Amazon Accelerator</li>
+                    <li>Protect and Build Your Brand</li>
+                    <li>Amazon Global Selling </li>
+                    <li>Supply to Amazon</li>
+                    <li>Become an Affiliate</li>
+                    <li>Fulfilment by Amazon</li>
+                    <li>Advertise Your Products</li>
+                    <li>Amazon Pay on Merchants </li>
+                    
+                </ol>
+             </div>
+             <div>
+
+                <ol>
+                    <li class="highlight">Let Us Help You</li>
+                    <li>Your Account</li>
+                    <li>Returns Centre</li>
+                    <li>Recalls and Product Safety Alerts</li>
+                    <li>100% Purchase Protection</li>
+                    <li> Amazon App Download</li>
+                    <li>Help</li>
+                </ol>
+             </div>
+             </div>
+        </section>
+        <section id="sec10">
+            <div>
+              <img src="https://www.pngplay.com/wp-content/uploads/3/White-Amazon-Logo-PNG-HD-Quality.png" alt="">
+            </div>
+            <div id="btns">
+                <button><i class='bx bx-globe'></i>English</button>
+                <button>India</button>
+            </div>
+        </section>
+        <footer>
+            <section id="foot">
+                <div>
+                    <h5>AbeBooks</h5>
+                    <p>Books, art <br> & collectibles</p>
+                </div>
+                <div>
+                    <h5>Amazon Web Services</h5>
+                    <p>Scalable Cloud <br>Computing Services</p>
+                </div>
+                <div>
+                    <h5>Audible</h5>
+                    <p>Download <br> Audio Books</p>
+                </div>
+                <div>
+                    <h5>IMDb</h5>
+                    <p>Movies, TV <br> & Celebrities</p>
+                </div>
+                <div>
+                    <h5>Shopbop</h5>
+                    <p>Designer <br>Fashion Brands</p>
+                </div>
+                <div>
+                    <h5>Amazon Business</h5>
+                    <p>Everything For <br>Your Business</p>
+                </div>
+                <div>
+                    <h5>Prime Now</h5>
+                    <p>2-Hour Delivery <br>on Everyday Items</p>
+                </div>
+                <div>
+                    <h5>Amazon Prime Music</h5>
+                    <p>100 million songs, ad- <br>free <br>Over 15 million podcast <br> episodes</p>
+                </div>
+            </section>
+        </footer>
+        <section id="last">
+            <p>Conditions of Use & Sale
+            Privacy Notice
+            Interest-Based Ads <br>
+            © 1996-2025, Amazon.com, Inc. or its affiliates</p>
+        </section>
+    
+
+    <!-- {% endblock content %} -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
+
