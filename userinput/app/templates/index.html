@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>USER INPUT</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">USERNAME</label>
+        <input type="text" name="un" id="">  <br><br>
+        <label for="">PASSWORD</label>
+        <input type="password" name="pswd" id="">  <br><br>
+        <label for="">CONFIRM PASSWORD</label>
+        <input type="password" name="cpswd" id="">  <br><br>
+        <button>submit</button>
+    </form>
+</body>
+</html>
