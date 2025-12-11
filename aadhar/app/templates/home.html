@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        .has{
+            width: 500px;
+            height: 210px;
+            /* border: 2px solid black; */
+            box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, .1);
+            border-radius: 5px;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .has p{
+            height: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            width: 498px;
+            background: linear-gradient(119.54deg, #000046 0, #1cb5e0 100%);
+        }
+        .has h2{
+            padding: 0px 30px ;
+            text-align: left;
+        }
+        .has img{
+            height: 55px;
+            width: 50px;
+        }
+        .has h6{
+            padding: 0px 30px ;
+            text-align: left;
+            color: #257f29;
+        }
+        .get{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel"  style="height: 354px;">
+        <div class="carousel-inner" style="height: 354px;">
+            <div class="carousel-item active" style="height: 354px;">
+            <img src="https://uidai.gov.in/images/banner/NEET-Web-Banner.jpg" class="d-block w-100" alt="..." style="height: 354px;">
+            </div>
+            <div class="carousel-item">
+            <img src="https://uidai.gov.in/images/banner/Bhuvan-APP_-banner.jpg" class="d-block w-100" alt="..." style="height: 354px;">
+            </div>
+            <div class="carousel-item">
+            <img src="https://uidai.gov.in/images/banner/SDK-details_Face-match.jpg" class="d-block w-100" alt="..." style="height: 354px;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <br>
+    <section>
+        <aside class="has">
+            <p></p>
+            <br>
+            <h2><img src="https://imgs.search.brave.com/GQuDNLUxlubwBWlXsxl_LofLxiKIXOKPAFyvpQkPXQ4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMDgzMi8xMDgz/MjE5NS5wbmc_c2Vt/dD1haXNfd2hpdGVf/bGFiZWw" alt="">&nbsp;&nbsp;<a href="{% url 'getaadhar' %}" class="get" >GET AADHAR</a></h2>
+            <h6>Aadhaar is for every Resident of India.</h6>
+        </aside>
+        <aside class="has">
+            <p></p>
+            <br>
+            <h2><img src="https://imgs.search.brave.com/qb7uuoWWSVLUieTODjVDBGrQIt8k6C8nYEbXugfHoWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3IvaWQtY2FyZHMt/dGVtcGxhdGUtd2l0/aC1tYW5fMTY1NDg4/LTM3MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZA" alt="">&nbsp;&nbsp;<a href="{% url 'getpan' %}" class="get">GET PAN</a></h2>
+            <h6>PAN card is for every citizen of India.</h6>
+        </aside>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{% endblock content %}

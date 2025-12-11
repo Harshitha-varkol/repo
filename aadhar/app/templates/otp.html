@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background: linear-gradient(119.54deg, #000046 0, #1cb5e0 100%);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            margin-left: 200px;
+        }
+        .has{
+            width: 500px;
+            height: 210px;
+            /* border: 2px solid black; */
+            box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, .1);
+            border-radius: 5px;
+        }
+        .has p{
+            height: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            width: 499.8px;
+            background: linear-gradient(119.54deg, #000046 0, #1cb5e0 100%);
+            margin: 0%;
+        }
+        .has h4{
+            margin-left: 130px;
+        }
+        form input{
+            border-radius: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>OTP HAS BEEN SENT TO YOUR EMAIL</h1>
+    <br><br>
+    <aside class="has">
+        <p></p>
+        <br><br>
+        <form action="" method="post">
+        {% csrf_token %}
+        <h4><label for="">OTP</label>&nbsp;&nbsp;&nbsp;<input type="number" name="otp" id=""></h4>
+        <button type="submit">submit</button>
+        </form>
+    </aside>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        #art1{
+            height: 42px;
+            background: linear-gradient(119.54deg, #000046 0, #1cb5e0 100%);
+            padding: 10px 0px;
+        }
+        #art1 ol{
+            display: flex;
+            color: white;
+            list-style: none;
+            gap: 50px;
+            margin-left: 40%;
+        }
+        #sec1{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        .dimensions{
+            border: 2px solid;
+            border-radius: 5px;
+            width: 400px;
+            height: 1000px;
+        }
+        #mf1{
+            display: flex;
+            padding: 10px 20px;
+        }
+        #mi2{
+            width: 300px;
+        }
+        #mi1{
+            width: 40px;
+            height: 50px;
+            overflow: hidden;
+        }
+        #orange{
+            width: 396.8px;
+            height: 45px;
+            background-color: #FF9933;
+            color: white;
+            font-size: 15px;
+        }
+        #orange p{
+            padding-top: 5px;
+            text-align: center;
+        }
+        #white{
+            width: 396.8px;
+            height: 45px;
+            background-color: white;
+        }
+        #green{
+            width: 396.8px;
+            height: 45px;
+            background-color: #138808;
+            color: white;
+            font-size: 15px;
+        }
+        #green p{
+            padding-top: 5px;
+            text-align: center;
+        }
+        #details{
+            width: 180px;
+            font-size: 14px;
+            text-align: left;
+            margin-left: 10px;
+            height: 140px;
+        }
+        #qr{
+            width: 160px;
+            height: 160px;
+            margin-left: 60%;
+        }
+        #qr img{
+            width: 150px;
+            height: 150px;
+        }
+        #rline{
+            width: 396.8px;
+            height: 3px;
+            background-color: red;
+        }
+        /* #mask{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        } */
+        #maskfront{
+            /* border: 2px solid; */
+            /* border-radius: 10px; */
+            width: 396.8px;
+            height: 300px;
+        }
+        #photo{
+            display: flex;
+            gap: 20px;
+            padding: 5px 20px;
+        }
+        #photo img{
+            width: 150px;
+            height: 150px;
+        }
+        h2{
+            text-align: center;
+        }
+        #photo p{
+            font-size: 15px;
+        }
+        #information{
+            width: 350px;
+            height: 565px;
+            margin-left: 25px;
+            border: 2px solid;
+        }
+        #information ul{
+            font-size: 12px;
+            line-height: 16px;
+            list-style: square;
+            margin-top: 5px;
+            margin-left: 22px;
+            font-weight: 500;
+        }
+        #soochana{
+            text-align: center;
+            color: red;
+            font-weight: 600;
+            font-size: 17px;
+        }
+        ul>li::marker{
+            color: red;
+            font-size: 19px;
+        }
+        #helpline ol{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <article id="art1">
+        <ol>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'getaadhar' %}">MY AADHAR</a></li>
+            <li><a href="{% url 'getpan' %}">MY PAN</a></li>
+        </ol>
+    </article>
+    <br><br>
+    <section id="sec1">
+    <div class="dimensions" id="unmaskfront">
+        <aside id="mf1">
+        <article id="mi1"><img src="https://uidai.gov.in/images/logo/uidai_english_logo.svg" alt=""></article>
+        <p id="mi2"><img  src="" alt=""></p>
+        <img id="mi3" src="https://uidai.gov.in/images/logo/aadhaar_english_logo.svg" alt="">
+        </aside>
+        <article id="orange">
+            <p>भारत सरकार <br>
+                Government Of India
+            </p>
+        </article>
+        <article id="white">
+
+        </article>
+        <article id="green">
+            <p>भारतीय विशिष्ट पहचान प्राधिकरण <br>
+            Unique Identification Authority of India
+            </p>
+        </article>
+        <font style="margin-left: 80px;font-size: 15px;">Enrollment No : 0000/12345/67890</font>
+        <br>
+        <p id="details">
+            To <br>
+            {{data.Aadhar_number}} <br>
+            {{data.first_name}} {{data.last_name}} <br>
+            D/O {{data.father_name}} <br>
+            {{data.address}} <br>
+        </p>
+        <section id="qr">
+            <img src="/media/qrcodes/{{ data.Aadhar_number }}.png" alt="QR Code">
+        </section>
+        <br>
+        <p style="text-align: center;">
+            <b>మీ <font style="color: red;">ఆధార్</font> సంఖ్య / Your <font style="color: red;">Aadhar</font> No: </b> <br>
+            <b>{{ data.Aadhar_number|stringformat:"s"|slice:":4" }}&nbsp;{{ data.Aadhar_number|stringformat:"s"|slice:"4:8" }}&nbsp;{{ data.Aadhar_number|stringformat:"s"|slice:"8:" }}</b>
+            <hr style="width:200px;margin-left: 100px;">
+            <b><font style="margin-left: 100px;">VID: 1234 5467 3456 3897</font></b><br>
+            <b><p style="text-align: center;margin: 0%;">నా <font style="color: red;">ఆధార్</font>  నా గుర్తింపు</b></p><br>
+            <nav id="rline"></nav>
+            <font>--------------------------------------------------------------</font><br>
+        </p>
+        <section id="mask">    
+    <div id="maskfront">
+        <aside id="mf1">
+        <article id="mi1"><img src="https://uidai.gov.in/images/logo/uidai_english_logo.svg" alt=""></article>
+        <p id="mi2"><img  src="" alt=""></p>
+        <img id="mi3" src="https://uidai.gov.in/images/logo/aadhaar_english_logo.svg" alt="">
+        </aside>
+        <article id="photo">
+            <img src="{{data.photo.url}}" alt="">
+            <div id="details">
+                <br>
+                <p>{{data.first_name}}&nbsp;{{data.last_name}}</p>
+                <p>DOB:&nbsp;{{data.dob}}</p>
+                <p>GENDER:&nbsp;{{data.gender}}</p>
+                <p>MOBILE NO:&nbsp;{{data.phone}}</p>
+            </div>
+        </article>
+        <h2>{{ data.Aadhar_number|stringformat:"s"|slice:":4" }}&nbsp;{{ data.Aadhar_number|stringformat:"s"|slice:"4:8" }}&nbsp;{{ data.Aadhar_number|stringformat:"s"|slice:"8:" }}</h2>
+        <nav id="rline"></nav>
+        <h4 style="text-align: center;font-size: 19px;margin-top: 10px;">నా <font style="color: red;font-size: 19px;">ఆధార్</font> నా గుర్తింపు</h4>
+    </div>
+    </div>
+    <div id="unmaskback" class="dimensions">
+        <aside id="mf1">
+        <article id="mi1"><img src="https://uidai.gov.in/images/logo/uidai_english_logo.svg" alt=""></article>
+        <p id="mi2"><img  src="" alt=""></p>
+        <img id="mi3" src="https://uidai.gov.in/images/logo/aadhaar_english_logo.svg" alt="">
+        </aside>
+        <nav id="rline"></nav>
+        <p id="soochana">సూచన / INFORMATION</p>
+        <div id="information">
+            <ul id="telugu">
+                <li>ఆధార్ గుర్తింపు రుజువు మాత్రమే, పౌరసత్వ రుజువు కాదు.</li>
+                <li>ఆధార్ ప్రత్యేకమైనది మరియు సురక్షితమైనది.</li>
+                <li>సురక్షిత QR కోడ్ / ఆఫ్లైన్ XML / ఆన్లైన్ ఆథెంటికేషన్ ద్వారా గుర్తింపును ధృవీకరించండి.</li>
+                <li>ఆధార్ లేఖ, PVC కార్డ్, e-ఆధార్ మరియు m-ఆధార్ అన్నీ సమానంగా చెల్లుబాటు అవుతాయి.</li>
+                <li>12 అంకెల ఆధార్ నంబర్ స్థానంలో VID ను కూడా ఉపయోగించవచ్చు.</li>
+                <li>ప్రతి 10 సంవత్సరాలకు కనీసం ఒకసారి ఆధార్ అప్‌డేట్ చేయించుకోండి.</li>
+                <li>మొబైల్ నంబర్ మరియు ఇమెయిల్ అప్‌డేట్ చేసి ఉంచండి.</li>
+                <li>ఆధార్ సేవల కోసం mAadhaar యాప్ డౌన్‌లోడ్ చేసుకోండి.</li>
+                <li>భద్రత కోసం బయోమెట్రిక్ లాక్ / అన్‌లాక్ సౌకర్యాన్ని వినియోగించండి.</li>
+                <li>ఆధార్ కోరే సంస్థలు సరైన సమ్మతి తీసుకోవడం తప్పనిసరి.</li>
+            </ul>
+            <ul>
+                <li>Aadhaar is a proof of identity, not of citizenship.</li>
+                    <li>Aadhaar is unique and secure.</li>
+                    <li>Verify identity using Secure QR Code / Offline XML / Online Authentication.</li>
+                    <li>All forms of Aadhaar like Aadhaar letter, PVC card, eAadhaar and mAadhaar are equally valid.</li>
+                    <li>Virtual Aadhaar Identity (VID) can also be used in place of the 12-digit Aadhaar number.</li>
+                    <li>Update Aadhaar at least once in 10 years.</li>
+                    <li>Keep your mobile number and email ID updated in Aadhaar.</li>
+                    <li>Download mAadhaar app to avail Aadhaar services.</li>
+                    <li>Use the feature of lock/unlock Aadhaar/biometrics to ensure security.</li>
+                    <li>Entities seeking Aadhaar are obligated to seek due consent.</li>
+            </ul>
+        </div>
+        <font>--------------------------------------------------------------</font><br>
+        <aside id="mf1">
+        <article id="mi1"><img src="https://uidai.gov.in/images/logo/uidai_english_logo.svg" alt=""></article>
+        <p id="mi2"><img  src="" alt=""></p>
+        <img id="mi3" src="https://uidai.gov.in/images/logo/aadhaar_english_logo.svg" alt="">
+        </aside>
+        <article id="photo">
+            <div id="details">
+                <br>
+                <!-- <p>H-NO:1-10-1/213/A/5  Chakripuram  </p> -->
+                <p> {{data.address}}</p>
+            </div>
+            <img src="/media/qrcodes/{{ data.Aadhar_number }}.png" alt="QR Code">
+        </article>
+        <h2>{{ data.Aadhar_number|stringformat:"s"|slice:":4" }}&nbsp;{{ data.Aadhar_number|stringformat:"s"|slice:"4:8" }}&nbsp;{{ data.Aadhar_number|stringformat:"s"|slice:"8:" }}</h2>
+        <nav id="rline"></nav>
+        <aside id="helpline">
+            <ol>
+                <li><i class="fa-solid fa-phone"></i>&nbsp;1947</li>
+                <li><i class="fa-solid fa-envelope"></i>&nbsp;help@uidai.gov.in</li>
+                <li><i class="fa-solid fa-globe"></i>&nbsp;www.uidai.gov.in</li>
+            </ol>
+        </aside>
+    </div>
+    </section>
+</body>
+</html>

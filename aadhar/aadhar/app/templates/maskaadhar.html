@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        #art1{
+            height: 42px;
+            background: linear-gradient(119.54deg, #000046 0, #1cb5e0 100%);
+            padding: 10px 0px;
+        }
+        #art1 ol{
+            display: flex;
+            color: white;
+            list-style: none;
+            gap: 50px;
+            margin-left: 40%;
+        }
+        #mask{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        #maskfront{
+            border: 2px solid;
+            border-radius: 10px;
+            width: 450px;
+            height: 300px;
+        }
+        #maskback{
+            border: 2px solid;
+            border-radius: 10px;
+            width: 450px;
+            height: 300px;
+        }
+        #mf1{
+            display: flex;
+            gap: 40px;
+            padding: 10px 10px;
+        }
+        #mi2{
+            width: 200px;
+        }
+        #photo{
+            display: flex;
+            gap: 30px;
+            padding: 5px 10px;
+        }
+        #photo img{
+            width: 150px;
+            height: 130px;
+        }
+        h2{
+            text-align: center;
+        }
+        #photo p{
+            font-size: 17px;
+        }
+        #qr{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* margin-left:40%; */
+        }
+        #qr img{
+            width: 150px;
+            height: 150px;
+        }
+        #rline{
+            width: 448px;
+            height: 5px;
+            background-color: red;
+        }
+        #helpline ol{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <article id="art1">
+        <ol>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'getaadhar' %}">MY AADHAR</a></li>
+            <li><a href="{% url 'getpan' %}">MY PAN</a></li>
+        </ol>
+    </article>
+    <br><br>
+    <section id="mask">    
+    <div id="maskfront">
+        <aside id="mf1">
+        <img id="mi1" src="https://uidai.gov.in/images/logo/uidai_english_logo.svg" alt="">
+        <p><img id="mi2" src="" alt=""></p>
+        <img id="mi3" src="https://uidai.gov.in/images/logo/aadhaar_english_logo.svg" alt="">
+        </aside>
+        <article id="photo">
+            <img src="{{data.photo.url}}" alt="">
+            <div id="details">
+                <br>
+                <p>{{data.first_name}}&nbsp;{{data.last_name}}</p>
+                <p>DOB:&nbsp;{{data.dob}}</p>
+                <p>GENDER:&nbsp;{{data.gender}}</p>
+                <p>MOBILE NO:&nbsp;{{data.phone}}</p>
+            </div>
+        </article>
+        <h2>XXXX XXXX {{ data.Aadhar_number|stringformat:"s"|slice:"8:" }}</h2>
+        <nav id="rline"></nav>
+        <h2 style="padding-top: 10px;">నా <font style="color: red;">ఆధార్</font> నా గుర్తింపు</h2>
+    </div>
+    <div id="maskback">
+        <aside id="mf1">
+        <img id="mi1" src="https://uidai.gov.in/images/logo/uidai_english_logo.svg" alt="">
+        <p id="mi2"><img  src="" alt=""></p>
+        <img id="mi3" src="https://uidai.gov.in/images/logo/aadhaar_english_logo.svg" alt="">
+        </aside>
+        <article id="qr">
+            <div id="details">
+                <br>
+                <!-- <p>H-NO:1-10-1/213/A/5  Chakripuram  </p> -->
+                <p style="width: 190px;height: 120px;"> {{data.address}}</p>
+            </div>
+            <img src="/media/qrcodes/{{ data.Aadhar_number }}.png" alt="QR Code">
+        </article>
+        <h2>XXXX XXXX {{ data.Aadhar_number|stringformat:"s"|slice:"8:" }}</h2>
+        <nav id="rline"></nav>
+        <aside id="helpline">
+            <ol>
+                <li><i class="fa-solid fa-phone"></i>&nbsp;1947</li>
+                <li><i class="fa-solid fa-envelope"></i>&nbsp;help@uidai.gov.in</li>
+                <li><i class="fa-solid fa-globe"></i>&nbsp;www.uidai.gov.in</li>
+            </ol>
+        </aside>
+    </div>
+    </section>
+</body>
+</html>

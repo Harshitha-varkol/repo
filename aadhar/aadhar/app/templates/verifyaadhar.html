@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background: linear-gradient(119.54deg, #000046 0, #1cb5e0 100%);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            margin-left: 200px;
+        }
+        .has{
+            width: 500px;
+            height: 210px;
+            /* border: 2px solid black; */
+            box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, .1);
+            border-radius: 5px;
+        }
+        .has p{
+            height: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            width: 499.8px;
+            background: linear-gradient(119.54deg, #000046 0, #1cb5e0 100%);
+            margin: 0%;
+        }
+        .has h4{
+            margin-left: 80px;
+        }
+        form input{
+            border-radius: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>VERIFY YOUR AADHAR</h1>
+    <br><br>
+    <aside class="has">
+        <p></p>
+        <br>
+        <form action="" method="post">
+            {% csrf_token %}
+            <h4><label for="">AADHAR NUMBER</label>&nbsp;&nbsp;&nbsp;<input type="number" name="aadharnumber" id=""></h4><br>
+        <button type="submit">VERIFY</button>
+        </form>
+    </aside>
+</body>
+</html>

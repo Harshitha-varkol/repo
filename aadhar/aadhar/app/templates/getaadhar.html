@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        .has{
+            width: 500px;
+            height: 210px;
+            /* border: 2px solid black; */
+            box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, .1);
+            border-radius: 5px;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .has p{
+            height: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            width: 498px;
+            background: linear-gradient(119.54deg, #000046 0, #1cb5e0 100%);
+        }
+        .has h2{
+            padding: 0px 30px ;
+            text-align: left;
+            display: flex;
+            align-items: center;  /* Align image & text vertically */
+            gap: 10px; 
+        }
+        .has img{
+            height: 55px;
+            width: 50px;
+        }
+        .has h5{
+            padding: 0px 30px ;
+            text-align: left;
+            color: #257f29;
+        }
+        .get{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+
+    <br><br><br><br>
+    <section>
+        <aside class="has">
+            <p></p>
+            <br>
+            <div class="box">
+            <h2><img src="https://imgs.search.brave.com/GQuDNLUxlubwBWlXsxl_LofLxiKIXOKPAFyvpQkPXQ4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMDgzMi8xMDgz/MjE5NS5wbmc_c2Vt/dD1haXNfd2hpdGVf/bGFiZWw" alt="">&nbsp;&nbsp;<a href="{% url 'register' %}" class="get" >CREATE AADHAR</a></h2>
+            </div>
+            <h5>Enter your details to create Aadhaar card</h5>
+        </aside>
+        <aside class="has">
+            <p></p>
+            <br>
+            <div class="box">
+            <h2><img src="https://imgs.search.brave.com/qb7uuoWWSVLUieTODjVDBGrQIt8k6C8nYEbXugfHoWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3IvaWQtY2FyZHMt/dGVtcGxhdGUtd2l0/aC1tYW5fMTY1NDg4/LTM3MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZA" alt="">&nbsp;&nbsp;<a href="{% url 'verifyaadhar' %}" class="get">DOWNLOAD AADHAR</a></h2>
+            </div>
+            <h5>To download Aadhaar, you must verify with OTP <br>and then proceed to download your Aadhaar card.</h5>
+        </aside>
+    </section>
+{% endblock content %}
