@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: SpotifyMixUI, CircularSp, Helvetica, Arial, sans-serif;
+        }
+        #a1{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 40px;
+            flex-direction: column;
+            gap: 10px;
+            
+        }
+        .a2{
+            height: 40px;
+            width: 45px;
+        }
+        #a1 h1{
+            color: white;
+            font-size: 48px;
+
+
+
+        }
+        #b{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+
+        }
+        .b-{
+            color: white;
+            font-size: 20px;
+            padding-right: 210px;
+
+        }
+        .b1{
+            width: 340px;
+            height: 50px;
+            background-color: black;
+            border: 2px solid gray;
+            font-size: 18px;
+            padding: 20px;
+            
+        }
+        #b p{
+            color:rgb(24, 219, 24);
+            font: 20px;
+            padding-right: 140px;
+
+
+        }
+        #b3{
+            background-color: rgb(32, 227, 32);
+            width: 340px;
+            height: 50px;
+            border-radius: 30px;
+            border: 2px solid;
+            font-size: 20px;
+        }
+        #b4{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        #b4 hr{
+            width: 150px;
+            color: gray;
+        }
+        #b4 span{
+            color: white;
+            font-size: 15px;
+        }
+        .b5{
+            display: flex;
+            justify-content:left;
+            align-items: center;
+            border-radius: 30px;
+            color: white;
+            width: 340px;
+            height: 60px;
+            background-color: black;
+            border: 2px solid;
+            gap: 25px;
+        }
+        .b5 img{
+            height: 30px;
+            width: 70px;
+        }
+        .b5 h4{
+            font-size: 15px;
+        }
+
+        
+    </style>
+</head>
+<body style="background-color: black;">
+    <section id="a1">
+
+        <h1><img src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_White.png" alt="" class="a2"></h1>
+        <h1>Sign up to</h1>
+        <h1>start listening</h1>
+        
+    </section><br>
+    <section id="b">
+    <label for="" class="b-">Email address</label>
+        <input type="text" name="" id=""placeholder="name@domain.com" class="b1">
+    <p><u>Use phone number instead</u></p>
+    <button id="b3"> Next</button>
+    <br>
+    <div id="b4">
+        <hr>
+        <span>or</span>
+        <hr>
+    </div>
+
+    <button class="b5"> <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNSAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIyLjEgMTIuMjI3MkMyMi4xIDExLjUxODIgMjIuMDM2NCAxMC44MzYzIDIxLjkxODIgMTAuMTgxOEgxMi41VjE0LjA1SDE3Ljg4MThDMTcuNjUgMTUuMyAxNi45NDU1IDE2LjM1OTEgMTUuODg2NCAxNy4wNjgyVjE5LjU3NzJIMTkuMTE4MkMyMS4wMDkxIDE3LjgzNjMgMjIuMSAxNS4yNzI3IDIyLjEgMTIuMjI3MloiIGZpbGw9IiM0Mjg1RjQiPjwvcGF0aD48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTEyLjQ5OTggMjEuOTk5OUMxNS4xOTk4IDIxLjk5OTkgMTcuNDYzNSAyMS4xMDQ1IDE5LjExOCAxOS41NzcyTDE1Ljg4NjIgMTcuMDY4MUMxNC45OTA3IDE3LjY2ODEgMTMuODQ1MyAxOC4wMjI3IDEyLjQ5OTggMTguMDIyN0M5Ljg5NTI5IDE4LjAyMjcgNy42OTA3NSAxNi4yNjM2IDYuOTA0MzkgMTMuODk5OUgzLjU2MzQ4VjE2LjQ5MDhDNS4yMDg5MyAxOS43NTkgOC41OTA3NSAyMS45OTk5IDEyLjQ5OTggMjEuOTk5OVoiIGZpbGw9IiMzNEE4NTMiPjwvcGF0aD48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTYuOTA0NTUgMTMuOUM2LjcwNDU1IDEzLjMgNi41OTA5MSAxMi42NTkxIDYuNTkwOTEgMTJDNi41OTA5MSAxMS4zNDA5IDYuNzA0NTUgMTAuNyA2LjkwNDU1IDEwLjFWNy41MDkwOUgzLjU2MzY0QzIuODg2MzYgOC44NTkwOSAyLjUgMTAuMzg2NCAyLjUgMTJDMi41IDEzLjYxMzYgMi44ODYzNiAxNS4xNDA5IDMuNTYzNjQgMTYuNDkwOUw2LjkwNDU1IDEzLjlaIiBmaWxsPSIjRkJCQzA1Ij48L3BhdGg+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi40OTk4IDUuOTc3MjdDMTMuOTY4IDUuOTc3MjcgMTUuMjg2MiA2LjQ4MTgyIDE2LjMyMjYgNy40NzI3M0wxOS4xOTA3IDQuNjA0NTVDMTcuNDU4OSAyLjk5MDkxIDE1LjE5NTMgMiAxMi40OTk4IDJDOC41OTA3NSAyIDUuMjA4OTMgNC4yNDA5MSAzLjU2MzQ4IDcuNTA5MDlMNi45MDQzOSAxMC4xQzcuNjkwNzUgNy43MzYzNiA5Ljg5NTI5IDUuOTc3MjcgMTIuNDk5OCA1Ljk3NzI3WiIgZmlsbD0iI0VBNDMzNSI+PC9wYXRoPjwvc3ZnPg==" alt="google"><h4>Sign up with Google</h4></button>
+    <button class="b5"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTUuMTk1IDQuNTEzQzE1Ljg3MyAzLjY5IDE2LjM1MSAyLjU2NyAxNi4zNTEgMS40MzNDMTYuMzUxIDEuMjc4IDE2LjM0MSAxLjEyMyAxNi4zMTggMUMxNS4yMDYgMS4wNDQgMTMuODcyIDEuNzM0IDEzLjA4MyAyLjY2OEMxMi40NDkgMy4zNzkgMTEuODcxIDQuNTEzIDExLjg3MSA1LjY0N0MxMS44NzEgNS44MjUgMTEuOTA1IDUuOTkxIDExLjkxNiA2LjA0N0MxMS45ODIgNi4wNTggMTIuMDk0IDYuMDggMTIuMjE2IDYuMDhDMTMuMjA2IDYuMDggMTQuNDUgNS40MTMgMTUuMTk1IDQuNTEzWk0xNS45NzMgNi4zMTNDMTQuMzE3IDYuMzEzIDEyLjk2MSA3LjMyNSAxMi4wOTMgNy4zMjVDMTEuMTcxIDcuMzI1IDkuOTcgNi4zOCA4LjUyNSA2LjM4QzUuNzc5IDYuMzggMyA4LjY0OCAzIDEyLjkxOEMzIDE1LjU4NiA0LjAyMyAxOC4zOTggNS4zMDEgMjAuMjExQzYuMzkxIDIxLjc0NCA3LjM0NyAyMyA4LjcyNSAyM0MxMC4wODEgMjMgMTAuNjgyIDIyLjEgMTIuMzcxIDIyLjFDMTQuMDgzIDIyLjEgMTQuNDcyIDIyLjk3OCAxNS45NzMgMjIuOTc4QzE3LjQ2MyAyMi45NzggMTguNDUzIDIxLjYxIDE5LjM5NyAyMC4yNjVDMjAuNDQyIDE4LjcyIDIwLjg4NyAxNy4yMTkgMjAuODk3IDE3LjE0MkMyMC44MDkgMTcuMTE5IDE3Ljk2MyAxNS45NTIgMTcuOTYzIDEyLjY5NUMxNy45NjMgOS44NzEgMjAuMTk4IDguNjA0IDIwLjMzMSA4LjUwNEMxOC44NTIgNi4zODEgMTYuNTk2IDYuMzE0IDE1Ljk3MyA2LjMxNFY2LjMxM1oiIGZpbGw9IndoaXRlIj48L3BhdGg+PC9zdmc+" alt="apple"><h4>Sign up with Apple</h4></button>
+    <br>
+    <hr style="color: rgb(170, 169, 169); width: 300px;"><br>
+    <p style="color: white; padding-left: 90px;">Already have an account?<u>Log in here.</u> </p>
+    </section>
+
+
+    
+</body>
+</html>
