@@ -1,0 +1,7 @@
+nav ol{
+        display: flex;
+        justify-content: space-around;
+        background-color: pink;
+        color: white;
+        font-size: 30px;
+}    
