@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+        body{
+            display: grid;
+            grid-template-columns: 310px 310px 310px 310px;
+            row-gap: 40px;
+            /* margin-left: 90px; */
+        }
+        .div1{
+            border: 2px solid;
+            border-radius: 10px;
+            width: 300px;
+            height: 500px;
+            background-color: white;
+            background-size: 124%;
+            background-repeat: no-repeat;
+            background-position:center;
+        }
+        #d1{
+            position: relative;
+            z-index: 1000;
+        }
+        #d1 img{
+            width: 150px;
+            height: 100px;
+            padding: 200px 70px;
+        }
+        #d1:hover{
+            transform: rotateX(-90deg);
+            transform: scale(-1,1); 
+            transition-duration: 0.5s;
+            opacity: 0;
+        }
+        aside{
+            position: relative;
+            top: 1%;
+        }
+        #d2{
+            background: none;
+            background:url('https://imgs.search.brave.com/y802mPjf6r1lUi0y8KpB4x-rCZDb3bgbD9AAZslHJ5I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudGVtcGxhdGUu/bmV0LzQ1MzA4Mi9E/b29kbGUtQm9yZGVy/LUNsaXBhcnQtZWRp/dC1vbmxpbmUucG5n');
+            background-size:cover;
+            background-position-x: -96px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0%;
+            text-align: center;
+        }
+        #d2 article{
+            padding-top: 90px;
+        }
+        #d2 h2{
+            font-size: 30px;
+            text-transform: uppercase;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #d2 p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    {% for i in data %}
+    <aside> 
+    <div class="div1" id="d1">
+        <img src="https://jspiders.com/images/PYSPSideLogo.png" alt="">
+    </div>
+    <div class="div1" id="d2">
+        <article>
+            <h2>{{ i.name }}</h2>
+            <p>{{ i.email }}</p>
+            <p>{{ i.YOP }} {{ i.DOB }}</p>
+            <p>{{ i.stream }} {{ i.branch }}</p>
+            <p>{{ i.address }} {{ i.per }} </p>
+            <p>{{ i.gender }} {{ i.age }} {{ i.courseopted }}</p>
+        </article>
+    </div>
+    </aside>
+    {% endfor %}
+
+    <!-- <table border="2px solid">
+        <tr>
+            <th>name</th>
+            <th>roll no</th>
+            <th>email</th>
+            <th>add</th>
+            <th>per</th>
+            <th>YOP</th>
+            <th>DOB</th>
+            <th>stream</th>
+            <th>branch</th>
+            <th>age</th>
+            <th>courseopted</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.rollno}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.add}}</td>
+            <td>{{i.per}}</td>
+            <td>{{i.YOP}}</td>
+            <td>{{i.DOB}}</td>
+            <td>{{i.stream}}</td>
+            <td>{{i.branch}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.courseopted}}</td>
+        </tr>
+        {% endfor %}
+    </table> -->
+</body>
+</html>
