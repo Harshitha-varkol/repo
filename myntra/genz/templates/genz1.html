@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Arial', 'Helvetica Neue', sans-serif;
+        }
+        header{
+            border: 2px none red;
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgb(168, 167, 167);
+
+
+        }
+
+        #div{
+            border: 2px none black;
+            height: 50px ;
+            width: 71px;
+            background-image: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+            /* background-size: auto; */
+            background-position: 10% 36%;
+        }
+        #div1{
+            border: 2px none black;
+            width: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+        #div1>a{
+            color: black;
+            font-weight: 500;
+            text-decoration: none;
+            
+
+        }
+        #sbox{
+            border: 2px none red;
+            height: auto;
+            width: 420px;
+            display: flex;
+            align-items: center;
+        }
+        .search{
+            font-size: 20px;
+            color: gray;
+            position: absolute;
+            z-index: 2;
+            padding-left: 16px;   
+        }
+        #sbox>input{
+            height: 11px;
+            width: 400px;
+            padding: 12px;
+            position: relative;
+        }
+        #sbox>input::placeholder{
+            font-size: 16px;
+            color: gray;
+            padding: 40px;
+        }
+
+        #div2{
+            height: auto;
+            width: 60px;
+        }
+        #d1{
+            height: auto;
+            width: 50px;
+
+        }
+        #d1>i{
+            color: black;
+        }
+        #div2{
+            border: 2px none red;
+            height: 40px;
+            width: 190px;
+            display: flex;
+            gap: 25px;
+        }
+        #div2 a{
+            font-weight: 500;
+        }
+        .d1{
+            border: 2px none black;
+            height: 45px;
+            width: 40px;
+            text-align: center;
+        }
+        #sec1{
+            border: 2px none black;
+            margin-top: 100px;
+
+        }
+        #div3{
+            font-size: 14px;
+
+        }
+        .sel{
+            border: none;
+
+        }
+        .sel:hover{
+            border: 1px none gray;
+            background-color: rgb(218, 214, 214);
+            border-radius: 30px;
+            padding: 5px;
+        }
+        #s1{
+            font-size: 13px;
+            color: red;
+        }
+        #d2{
+            border: 2px none red;
+            height: auto;
+            width: 230px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        #d3{
+            border: 2px none red;
+            height: auto;
+            width: 790px;
+            display: flex;
+            justify-content: space-between;
+
+
+
+        }
+        #s2{
+            font-size: 13px;
+        }
+        #sel1{
+            width: 240px;
+            padding: 5px  10px;
+            font-size: 16px;
+        }
+        #div4{
+            border: 2px none black;
+            width: 1380px;
+            height: auto;
+            display: flex;
+            justify-content: space-between  ;
+            align-items: center;
+            padding: 0px 10px;
+
+        }
+        #sec2{
+            border: 1px solid rgb(179, 177, 177);
+            height: auto;
+            width: 225px;
+            left: 0;
+            padding: 10px 0px 0px 20px ;
+            position: sticky;
+            z-index: -1;
+        
+            
+
+        }
+        .d4{
+            border: 2px none red;
+            width:220px;
+            font-size: 15px;
+            font-weight: 500;
+           
+       
+        }   
+        .d4>i{
+           margin-left: 80px;
+          
+        }
+        .p2{
+            margin-left: 20px;
+            color: red;
+            font-size: 15px;
+
+        }
+        .range-input{
+            background-color: #d3d3d3;
+            height: 3px;
+            outline: none;
+            width: 100%;
+        }
+        label{
+            font-size: 15px;
+        }
+        
+    /* .range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 4px solid white;
+      background: #ff3f6c;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 0 2px #ff3f6c;
+    }
+     .range-input::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border: 4px solid white;
+      background: #ff3f6c;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 0 2px #ff3f6c;
+    } */
+     
+     .color-filter label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.color-filter input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.count {
+  color: #888;
+  font-size: 14px;
+  margin-left: 5px;
+}
+#sec3{
+    border: 2px none red;
+    height: auto;
+    width: 1100px;
+    margin-left: 270px;
+    margin-top: -1180px;
+    display: grid;
+    grid-template-columns: repeat(4,270px);
+    grid-template-rows: repeat(12,1fr);
+    gap: 20px;
+    padding: 10px;
+    
+
+
+}
+
+.box1{
+    border: 2px none black;
+    height: 390px;
+    width: 225px;
+    
+    /* background-image: url(https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14685736/2021/7/22/5d6a5da0-cb74-4f9c-99ae-729651abfa101626945052617-Kook-N-Keech-Unisex-Caps-2451626945052045-1.jpg);
+    background-position: 50% 75%; */
+
+}
+.box1:hover{
+    box-shadow: 0px 0px 10px rgb(196, 194, 194);
+
+}
+
+.box1>img{
+    height:75%;
+    width: 100%;
+
+}
+.h4{
+    line-height: 0px;
+}
+.s3{
+    font-size: 14px;
+    
+}
+.text p{
+    line-height: 1px;
+}
+.text a{
+    color: red;
+    font-size: 13px;
+
+}
+.text strike{
+    font-size: 14px;
+}
+
+
+.text{
+    border: 2px none red;
+    height: 90px;
+    width: 213px;
+    padding-left: 9px;
+}
+.rating{
+    border: 2px none purple;
+    width:50px;
+    background-color: white;
+   margin-left: 20px;
+   text-align: center;
+   padding: 1px 2px;
+    margin-top: -34px;
+    position: relative;
+}
+.rating>i{
+    font-size: 13px;
+    color: rgb(4, 154, 4);
+}
+
+
+      
+        
+    
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="div"></div>
+        <div id="div1">
+            <a href="">MEN</a><a href="">WOMEN</a><a href="">KIDS</a><a href="">HOME</a><a href="">BEAUTY</a><a href="">GENZ</a><a href="">STUDIO</a>
+        </div>
+
+        <div id="sbox">
+            <i class="fa-solid fa-magnifying-glass search"></i>
+            <input type="text" placeholder= " Search for products brands and more">
+        </div>
+        <div id="div2">
+            <div class="d1">
+                
+                <i class="fa-regular fa-user"></i>
+                <a>profile</a>   
+                 
+                
+            </div>
+            <div class="d1">
+                <i class="fa-regular fa-heart"></i>   
+                <a>Wishlist</a> 
+            </div>
+            <div class="d1">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <a>Bag</a>
+
+            </div>
+        </div>
+       
+
+    </header>
+    <section id="sec1">
+        <div id="div3">
+            <p>Home/Accessories/ <strong>Myntra</strong></p>
+            <p ><strong>Myntra</strong> - 587 items</p>
+
+
+        </div>
+        <div id="div4">
+            <div id="d2">
+                <strong>FILTER</strong>
+                <strong id="s1">CLEAR ALL</strong>
+
+            </div>
+            <div id="d3">
+               <select  class="sel">
+                <option value="">Bundles</option>
+               </select>
+               <select class="sel" >
+                <option value="">Country of Orign</option>
+               </select>
+               <select class="sel">
+                <option value="">Materials</option>
+               </select>
+               <select class="sel">
+                <option value="">Net Qualitty Unit</option>
+               </select>
+               <select class="sel">
+                <option value="">Occasions</option>
+               </select>
+               <select class="sel">
+                <option value="">Patterns</option>
+               </select>
+               <select class="sel">
+                <option value="">Rating</option>
+               </select>
+               <strong id="s2">+6more</strong>
+               
+            </div>
+            <select name="" id="sel1">
+                <option value=""> Sort by: <strong>Recomended</strong></option>
+            </select>
+        </div>
+    </section>
+    <section id="sec2">
+        
+        <input type="radio" value="Men" id="m">
+        <label for="m">Men</label><br>
+       
+        <input type="radio"  value="female" >
+        <label >Female</label>
+        <hr>
+        <div class="d4">
+        <label for="">CATEGORIES</label>
+            <i class="fa-solid fa-magnifying-glass search"></i>
+        
+        </div><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Tshirts</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Tops</label> <br>
+
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Kurtas</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Earringa</label><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Shirts</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Flip Flops</label><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Heels</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Handbags</label>
+        <p class="p2">+262 more</p>
+        <hr>
+        <div class="d4">
+        <label for="">BRAND</label>
+            <i class="fa-solid fa-magnifying-glass search"></i>
+        
+        </div><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Roadster</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >StyleCast x Revolte</label> <br>
+
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">WROGN</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >DressBerry</label><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Vritrax</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >HRX by Hrithik Roshan</label><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">O THREE</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Evanden</label>
+        <p class="p2">+7 more</p>
+        <hr>
+        <div class="d4">
+        <label for="">PRICE</label><br>
+        <input type="range" class="range-input" min="200" max="1000" value="900" >
+         <div class="price-value" id="price">₹200 - ₹900</div>
+            
+        
+        </div><br>
+        <hr>
+       
+        <div class="color-filter">
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #2f3a3f;"></span>
+            Black <span class="count">(119)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #b0b0b0;"></span>
+            Grey <span class="count">(67)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #007bff;"></span>
+            Blue <span class="count">(55)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #2e3a70;"></span>
+            Navy Blue <span class="count">(46)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #ffffff; border: 1px solid #ccc;"></span>
+            White <span class="count">(39)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #f7b2d9;"></span>
+            Pink <span class="count">(36)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #d9534f;"></span>
+            Red <span class="count">(28)</span>
+        </label>
+        <p class="p2">+23 more</p>
+        </div>
+        <hr>
+        <div class="d4">
+        <label for="">DISCOUNT RANGE</label>
+        </div>
+        <br>
+          <input type="radio" value="Men" id="m">
+        <label for="m">20% and above</label><br>
+       
+        <input type="radio"  value="female" >
+        <label >30% and above</label><br>
+          <input type="radio" value="Men" id="m">
+        <label for="m">40% and above</label><br>
+       
+        <input type="radio"  value="female" >
+        <label >50% and above</label><br>
+          <input type="radio" value="Men" id="m">
+        <label for="m">60% and above</label><br>
+       
+        <input type="radio"  value="female" >
+        <label >70% and above</label><br>
+          <input type="radio" value="Men" id="m">
+        <label for="m">80% and above</label><br>
+    </section>
+    <section id="sec3">
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14685736/2021/7/22/5d6a5da0-cb74-4f9c-99ae-729651abfa101626945052617-Kook-N-Keech-Unisex-Caps-2451626945052045-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+         <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/MAY/20/em5SpfDD_3640c46ee743454eb76b6d1258b2b491.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">HRX by Hrithik Roshan</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+         <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666458/2020/11/10/1e790c95-73b9-4c4c-811c-17b17a9fad291605006042391-WROGN-Unisex-Black-Solid-Baseball-Cap-6181605006042078-6.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+         <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/FEBRUARY/3/oOpKmymD_8b35959720d04a87be87ff524af13dee.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+         <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14859818/2021/8/11/e74505c9-00e4-4e80-a973-8da07936592c1628686199397-HRX-by-Hrithik-Roshan-Unisex-Olive-Green-Cotton-Baseball-Cap-7.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12424020/2020/10/30/8261dedd-d8a0-4fbd-91e8-18dcf2eb28031604063599782-WROGN-Unisex-Caps-8001604063598812-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/APRIL/12/nImto9HP_b850b2f6f8d14d71b24f6b62e443172a.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666450/2020/10/23/2e4adb9e-ac2e-4940-90c8-32ed0af72cf91603430535941-WROGN-Unisex-Black-Printed-Baseball-Cap-6701603430535666-5.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/APRIL/12/95CfnzTZ_8bb1230a0c6e45058728a9f9d5e4b1b7.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/APRIL/14/emwltzsk_ac43d05d0085494183fbce503b247f6e.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/MAY/20/Xn6VkKrE_cdf65529c15247c49e8b027ba4297360.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12561144/2020/10/23/ad28d1a0-512e-4de0-ba59-1da511b88ab81603430860958-Roadster-Unisex-Grey-Printed-Baseball-Cap-3101603430860619-7.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/JUNE/30/6pCkzqEu_ed1c6b001ab14d438029057c105aeaa7.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14859832/2021/8/11/3a73b068-3640-435f-bc52-e26fdea9de891628686255986-HRX-by-Hrithik-Roshan-Unisex-Black-Cotton-Baseball-Cap-95162-7.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12424078/2020/10/15/9743e4cd-bbbd-4dcc-af1c-6f6cdb7c75541602736602711-WROGN-Unisex-Navy-Blue-Solid-Beanie-731602736602099-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666468/2020/10/23/c018206e-4c45-4a64-b6de-d88c6c6facb41603430804991-WROGN-Unisex-Caps-3821603430804729-5.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14685910/2021/7/22/e3eca6b7-943b-49f7-bdf4-76e6d20bf5e21626942165580-WROGN-Unisex-Caps-7211626942165090-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12424002/2020/10/30/a1560291-3c5c-43ef-b44c-d995817b4d4d1604063706512-WROGN-Unisex-Caps-8601604063705384-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666484/2020/11/10/d0508052-8e03-4e4b-bf8c-dbd8f328d7a81605006265611-WROGN-Unisex-Navy-Blue-Embroidered-Baseball-Cap-557160500626-6.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14685972/2021/7/22/7ee55621-cd0c-4b07-86c3-4e42e1efe04d1626938979032-WROGN-Unisex-Grey--White-Printed-Beanie-4381626938978527-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16947120/2022/3/18/ea6c4749-9e78-4471-9ab5-2d6394583c6e1647602144177-WROGN-Unisex-Yellow--Black-Printed-Baseball-Cap-315164760214-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14685696/2021/7/22/6f483eae-6acb-4f75-b6c7-81b8302ad69f1626938901855-WROGN-Unisex-Caps-3361626938901464-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12561166/2020/10/23/51d8a41f-2c40-4c28-90e1-f4ebfe1639b61603430930354-Roadster-Unisex-Black-Printed-Baseball-Cap-481603430930167-7.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16947130/2022/3/18/22e0c61b-7398-45ae-96f9-a35e0b6f35d91647602165682-WROGN-Unisex-Maroon-Printed-Pure-Cotton-Baseball-Cap-6161647-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/APRIL/12/CZjqvVo4_47ed36a39818427099a1fe47f945f4fc.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14685866/2021/8/24/f2c90437-66a6-4e6e-884c-90f3123300ac1629787726162-WROGN-Unisex-Caps-7221629787725737-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666472/2023/7/28/841f18fa-ae04-4815-a02c-dd1eb3c596421690543120621WROGNUnisexBaseballCap1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16947126/2022/3/18/299fc6f1-01eb-4bd9-947c-6ab93e80b6571647602155295-WROGN-Unisex-Blue-Embroidered-Pure-Cotton-Denim-Baseball-Cap-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12561132/2020/10/10/cb20aa01-464a-49d9-b85c-fe994b411e6e1602310056022-Roadster-Unisex-Caps-5891602310053160-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666442/2020/10/23/fea3af65-b3f3-499d-a945-c9cf47377fcf1603430522019-WROGN-Unisex-Black-Embroidered-Baseball-Cap-1101603430521752-5.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12424098/2020/10/15/e88bb228-1e0e-4d13-b6fa-fdacc1f1054b1602736621344-WROGN-Unisex-Grey-Solid-Beanie-81602736619328-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12424036/2020/10/30/6653ea75-1fcc-43af-a40b-bc3434037c691604063613558-WROGN-Unisex-Caps-7241604063612446-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14685902/2021/10/25/6cc587ab-f215-4d95-9946-fb6ead7f441c1635163562652-WROGN-Unisex-Caps-41635163562145-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14685922/2021/8/30/f8c97ddb-808d-455e-a5f8-cacb272dc2d01630302988111-WROGN-Unisex-Grey-Woollen-Beanie-7151630302987868-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666478/2020/11/4/e929c048-518c-41e1-a0f6-8228bfce21d91604491048566-WROGN-Unisex-Caps-171604491047941-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666474/2020/11/4/13b0d6e7-d819-44a4-a123-77476aaf5dc51604491043275-WROGN-Unisex-Caps-4361604491042764-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666492/2020/10/23/06df8674-24c4-4f4c-ad2b-739900e6bebe1603430561163-WROGN-Unisex-Navy-Blue-Embroidered-Baseball-Cap-201160343056-5.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14859836/2021/8/12/8444adb0-943d-46f9-8464-1c35be6597851628748675898-HRX-by-Hrithik-Roshan-Unisex-Black-Brand-Logo-Printed-Baseba-7.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23612156/2023/7/19/57313a27-bbd2-4c56-acbc-1292187f39fd1689760031263-DressBerry-Women-Self-Design-Beanie-11689760031147-5.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12666456/2020/11/4/a63dedc9-b1d5-4104-9e71-8c292ccecbf01604494114344-WROGN-Unisex-Caps-3061604494113303-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12424048/2020/10/30/c6343d71-73ec-437c-ba11-09a797aadcdc1604065819779-WROGN-Unisex-Caps-6561604065818287-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12424068/2020/10/15/79ea6d31-d607-4019-aea4-e3ae447155631602736581583-WROGN-Unisex-Multicoloured-Self-Design-Beanie-28816027365806-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/APRIL/12/qcJElKGO_81641615e427423a9f433d433504f02f.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/29628478/2024/7/17/f569410c-515e-4251-92eb-0475be435df91721212510669-HRX-by-Hrithik-Roshan-Unisex-Baseball-Cap-1371721212510191-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/7277340/2018/12/6/cedb4f22-7518-4846-b376-024e376905c71544089507302-Roadster-Unisex-Olive-Green-Solid-Baseball-Cap-4071544089505-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12424044/2020/10/30/6cb1d54b-3fcb-4f23-b652-395b89e14f9e1604063623922-WROGN-Unisex-Caps-8551604063622609-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+
+
+    </section>
+    <footer style="display: flex; gap: 40px; background-color: #f3f3f3; padding: 30px; font-family: Arial, sans-serif; flex-wrap: wrap;">
+
+  
+  <div style="flex: 1; min-width: 200px;">
+    <h4 style="font-weight: bold; margin-bottom: 10px;">ONLINE SHOPPING</h4>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 5px; font-size: 14px;">Men</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Women</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Kids</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Home</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Beauty</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Genz</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Gift Cards</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Myntra Insider</li>
+    </ul>
+  </div>
+
+
+  <div style="flex: 1; min-width: 200px;">
+    <h4 style="font-weight: bold; margin-bottom: 10px;">CUSTOMER POLICIES</h4>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 5px; font-size: 14px;">Contact Us</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">FAQ</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">T&C</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Terms Of Use</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Track Orders</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Shipping</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Cancellation</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Returns</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Privacy Policy</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Grievance Redressal</li>
+    </ul>
+  </div>
+
+
+  <div style="flex: 1; min-width: 200px;">
+    <h4 style="font-weight: bold; margin-bottom: 10px;">USEFUL LINKS</h4>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 5px; font-size: 14px;">Blog</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Careers</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Site Map</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Corporate Information</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Whitehat</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Cleartrip</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Myntra Global</li>
+    </ul>
+  </div>
+
+  
+  <div style="flex: 1; min-width: 200px;">
+    <h4 style="font-weight: bold; margin-bottom: 10px;">EXPERIENCE APP</h4>
+    <div style="margin-bottom: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" width="120" style="margin-bottom: 8px;"><br>
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" width="120">
+    </div>
+    <div style="margin-top: 10px;">
+      <i class="fa fa-facebook-square" style="font-size: 24px; margin-right: 10px; color: #333;"></i>
+      <i class="fa fa-twitter-square" style="font-size: 24px; margin-right: 10px; color: #333;"></i>
+      <i class="fa fa-youtube-play" style="font-size: 24px; margin-right: 10px; color: #333;"></i>
+      <i class="fa fa-instagram" style="font-size: 24px; color: #333;"></i>
+    </div>
+  </div>
+
+</footer>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+   
+</body>
+</html>

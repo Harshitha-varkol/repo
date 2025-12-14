@@ -1,0 +1,36 @@
+from django.urls import path
+from . import views
+
+urlpatterns=[
+    path('bathandbodyworks',views.bathandbodyworks),
+    path('beautyandgift',views.beautyandgift),
+    path('bodylotion',views.bodylotion),
+    path('bodymist',views.bodymist),
+    path('compact',views.compact),
+    path('deodorants',views.deodorants),
+    path('epilator',views.epilator),
+    path('facemoisturizer',views.facemoisturizer),
+    path('facewash',views.facewash),
+    path('haircolor',views.haircolor),
+    path('hairdryer',views.hairdryer),
+    path('hairgel',views.hairgel),
+    path('hairoil',views.hairoil),
+    path('hairserum',views.hairserum),
+    path('hairstraightener',views.hairstraightener),
+    path('lakme',views.lakme),
+    path('lipgloss',views.lipgloss),
+    path('lipliner',views.lipliner),
+    path('lipsticks',views.lipsticks),
+    path('makeupkit',views.makeupkit),
+    path('maybelline',views.maybelline),
+    path('mcaffiene',views.mcaffiene),
+    path('nailpolish',views.nailpolish),
+    path('nivea',views.nivea),
+    path('perfumes',views.perfumes),
+    path('loreal',views.loreal),
+    path('philips',views.philips),
+    path('shampoo',views.shampoo),
+    path('sunscreen',views.sunscreen),
+    path('thebodyshop',views.thebodyshop),
+]
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home Lamps & Lighting </title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    border-bottom: 1px solid #ddd;
+    }
+
+    .logo img {
+    width: 50px;
+    }
+
+    .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0 30px;
+    padding: 0;
+    }
+
+    .nav-links li {
+    margin: 0 15px;
+    }
+
+    .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    }
+
+    .new-tag {
+    color: red;
+    font-size: 10px;
+    margin-left: 4px;
+    }
+
+    .search-bar {
+    flex: 1;
+    }
+
+    .search-bar input {
+    width: 300px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    }
+
+    .icons {
+    display: flex;
+    align-items: center;
+    }
+
+    .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    }
+
+    .icon img {
+    width: 24px;
+    height: 24px;
+    }
+
+    .icon span {
+    font-size: 12px;
+    margin-top: 2px;
+    }
+    label{
+        color: #463e3e;
+    }
+    input{
+        border-color: lightgray;
+        background-color: white;
+    }
+
+    .line-container {
+        position: relative;
+        width: 80%;
+        height: 4px;
+        background-color: #ff3c6f; /* pink color */
+        margin: 50px auto;
+    }
+
+    .line-container::before,.line-container::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        background-color: #ff3c6f; /* pink color */
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+    .line-container::before {
+        left: -8px;
+    }
+    .line-container::after {
+        right: -8px;
+    }
+    footer>div>div>p,.ptags>p,li,h5{
+        color: #332f2f;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+        <img style="height:50px;width:70px;" src="data:image/jpeg;base64,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" alt="Myntra Logo" />
+        </div>
+        <ul class="nav-links">
+        <li><a href="#">MEN</a></li>
+        <li><a href="#">WOMEN</a></li>
+        <li><a href="#">KIDS</a></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">BEAUTY</a></li>
+        <li><a href="#">GENZ</a></li>
+        <li><a href="#">STUDIO <span class="new-tag">NEW</span></a></li>
+        </ul>
+        <div class="search-bar">
+        <input type="text" placeholder="Search for products, brands and more">
+        </div>
+        <div class="icons">
+        <div class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="Profile Icon">
+            <span>Profile</span>
+        </div>
+        <div class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/like--v1.png" alt="Wishlist Icon">
+            <span>Wishlist</span>
+        </div>
+        <div class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/shopping-bag.png" alt="Bag Icon">
+            <span>Bag</span>
+        </div>
+        </div>
+    </nav>
+    <div style="text-align: center;">
+        <br>
+        <p >You Searched for <strong style="color:blue">lightsnlamps</strong></p><br>
+        <div style="height:500px;width:500px;margin-left:430px;border:1px soild red;">
+            <img height="200px" width="200px" src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2025/MARCH/19/CMJIAOfp_83c3c334fd6a472583961594d7a1f106.jpg" alt="logo">
+        </div>
+        <h1 style="color: #463e3e;margin-top:-290px;">We counldn't find any matches!</h1>
+        <p style="color: #ccc;">Please check the spelling or try searching something else</p>
+        <br><br>
+        <input type="text" placeholder="  Shoes, T-Shirts, Tops etc." style="width: 700px;height:50px;">
+        <button style="color: blue;;height:51px;width:100px;background-color:white;border:none;margin-left:-100px;"> SEARCH</button>
+        <br><br>
+        <p style="font-size: small;color:#ccc"><b style="color: #463e3e;">Popular searches:</b> Nike Shoes,Woodland Shoes,Adidas Shoes,Titan Watches,Fila Shoes,Puma Shoes,Fastrack Watches</p>
+    </div>
+    <footer style="background-color: #ece8e8;width:1350px;height:800px;border:1px soild black;margin-top:100px;">
+        <br><br>
+        <div style="display: flex;margin-left:150px;font-size:12px;gap:100px;">
+            <div>
+                <h4>ONLINE SHOPPING</h4><br>
+                <p>Men</p>
+                <p>Women</p>
+                <p>Kids</p>
+                <p>Home</p>
+                <p>Beauty</p>
+                <p>Genz</p>
+                <p>Gift Cards</p>
+                <p>Myntra Insider</p>
+            </div>
+            <div>
+                <h4>CUSTOMER POLICES</h4><br>
+                <p>Contact Us</p>
+                <p>FAQ</p>
+                <p>T&C</p>
+                <p>Terms Of Use</p>
+                <p>Track Orders</p>
+                <p>Shipping</p>
+                <p>Cancellation</p>
+                <p>Returns</p>
+                <p>Privacy Policy</p>
+                <p>Grievance Redressal</p>
+            </div>
+            <div>
+                <h4>EXPERIENCE MYNTRA APP ON MOBILE</h4><br>
+                <img height="50px;" width="150px;" style="background-color: black;border-radius:10px;" src="https://images.ctfassets.net/wtodlh47qxpt/6BdZsyjLn64c06uCIE73d1/fb530f5d5231533b049463f6c7e8a2b1/google_play.svg?h=90&w=266&fm=webp&fit=fill" alt="">
+                <img height="50px;" width="150px;" style="background-color: black;border-radius:10px;" src="https://images.ctfassets.net/wtodlh47qxpt/em3mcMuAdXWlgucSJiTbS/d3ae7e51ed101d829e459355e255c47f/apple.svg?h=90&w=266&fm=webp&fit=fill" alt="">
+                <br><br>
+                <div>
+                    <h4>KEEP IN TOUCH</h4>
+                    <img height="40px" width="40px" src="https://images.ctfassets.net/wtodlh47qxpt/4ZHyPA2EeaoP3aqtNDriBA/463462a9c27b0aa585e12b21ce3766e0/Social_Insta_White.svg?h=60&w=60&fm=webp&fit=fill" alt="">
+                    <img height="40px" width="40px" src="https://images.ctfassets.net/wtodlh47qxpt/dKiu2meLcfz2DNwsg7nZw/7194830b1ba6f25b158a23d6b2c4752c/Social_Facebook_White.svg?h=60&w=60&fm=webp&fit=fill" alt="">
+                    <img height="40px" width="40px" src="https://images.ctfassets.net/wtodlh47qxpt/78z9x0WwdkdXwGVK726EKX/6599ca34ec88e2a6f46d7d94ed85a8ad/Social_Twitter_White.svg?h=60&w=60&fm=webp&fit=fill" alt="">
+                </div>
+            </div>
+            <div>
+                <p><strong><b>100% ORIGINAL </b></strong> guarentee for <br> for all products at myntra.com</p><br>
+                <p><strong><b>Return within 14 days </b></strong> of <br> receiving your order</p>
+            </div>
+        </div><br>
+        <div style="margin-left:150px;font-size:12px;margin-top:-70px;" class="ptags">
+            <h4>USEFUL LINKS</h4>
+            <p>Blog</p>
+            <p>Careers</p>
+            <p>Site Map</p>
+            <p>Corporate Information</p>
+            <p>Whitehat</p>
+            <p>Cleartip</p>
+            <p>Myntra Global</p>
+        </div>
+        <br>
+        <div style="margin-left:150px;font-size:12px;" class="ptags">
+            <h4>POPULAR SEARCHES</h4><hr style="width: 1000px;margin-top:-23px;margin-right:50px;"><br>
+            <p>MakeUp | Dresses for Girls | T-Shirts | Sandlas | HeadPhones | Babydolls | Blazers For Men | Handbags | Ladies Watches | Bags | Sport Shoes | Reebok Shoes | Puma Shoes |
+            Boxers | Wallets | Tops | Earrings | FastrackWatches | Kurtis | Nike | SmartWatches | Titan Watches | Designer Blouse | Gowns | Rings | Cricket Shoes | Forever 21 | Eye 
+            Makeup | Photo Frames | Punjabi Suits | Bikini | Myntra Fashion Show | <br> Lipstick | Saree | Watches | Dresses | Lehanga | Nike Shoes | Goggles | Bras | Suit | Chinos | Shoes |
+            Adidas Shoes | Woodland Shoes | Jewellery | Designers Sarees</p>
+        </div>
+        <br>
+        <div style="margin-left:150px;font-size:15px;display:flex;gap:200px;" class="ptags">
+            <p>In case of any concern, <a style="color:blue;text-decoration:none;font-weight:bold;" href="">Contact Us</a></p>
+            <p>© 2025 www.myntra.com. All rights reserved.</p>
+            <p>A Flipkart company</p>
+        </div>
+    </footer>
+</body>
+</html>

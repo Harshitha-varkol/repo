@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Arial', 'Helvetica Neue', sans-serif;
+        }
+        header{
+            border: 2px none red;
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgb(168, 167, 167);
+
+
+        }
+
+        #div{
+            border: 2px none black;
+            height: 50px ;
+            width: 71px;
+            background-image: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+            /* background-size: auto; */
+            background-position: 10% 36%;
+        }
+        #div1{
+            border: 2px none black;
+            width: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+        #div1>a{
+            color: black;
+            font-weight: 500;
+            text-decoration: none;
+            
+
+        }
+        #sbox{
+            border: 2px none red;
+            height: auto;
+            width: 420px;
+            display: flex;
+            align-items: center;
+        }
+        .search{
+            font-size: 20px;
+            color: gray;
+            position: absolute;
+            z-index: 2;
+            padding-left: 16px;   
+        }
+        #sbox>input{
+            height: 11px;
+            width: 400px;
+            padding: 12px;
+            position: relative;
+        }
+        #sbox>input::placeholder{
+            font-size: 16px;
+            color: gray;
+            padding: 40px;
+        }
+
+        #div2{
+            height: auto;
+            width: 60px;
+        }
+        #d1{
+            height: auto;
+            width: 50px;
+
+        }
+        #d1>i{
+            color: black;
+        }
+        #div2{
+            border: 2px none red;
+            height: 40px;
+            width: 190px;
+            display: flex;
+            gap: 25px;
+        }
+        #div2 a{
+            font-weight: 500;
+        }
+        .d1{
+            border: 2px none black;
+            height: 45px;
+            width: 40px;
+            text-align: center;
+        }
+        #sec1{
+            border: 2px none black;
+            margin-top: 100px;
+
+        }
+        #div3{
+            font-size: 14px;
+
+        }
+        .sel{
+            border: none;
+
+        }
+        .sel:hover{
+            border: 1px none gray;
+            background-color: rgb(218, 214, 214);
+            border-radius: 30px;
+            padding: 5px;
+        }
+        #s1{
+            font-size: 13px;
+            color: red;
+        }
+        #d2{
+            border: 2px none red;
+            height: auto;
+            width: 230px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        #d3{
+            border: 2px none red;
+            height: auto;
+            width: 790px;
+            display: flex;
+            justify-content: space-between;
+
+
+
+        }
+        #s2{
+            font-size: 13px;
+        }
+        #sel1{
+            width: 240px;
+            padding: 5px  10px;
+            font-size: 16px;
+        }
+        #div4{
+            border: 2px none black;
+            width: 1380px;
+            height: auto;
+            display: flex;
+            justify-content: space-between  ;
+            align-items: center;
+            padding: 0px 10px;
+
+        }
+        #sec2{
+            border: 1px solid rgb(179, 177, 177);
+            height: auto;
+            width: 225px;
+            left: 0;
+            padding: 10px 0px 0px 20px ;
+            position: sticky;
+            z-index: -1;
+        
+            
+
+        }
+        .d4{
+            border: 2px none red;
+            width:220px;
+            font-size: 15px;
+            font-weight: 500;
+           
+       
+        }   
+        .d4>i{
+           margin-left: 80px;
+          
+        }
+        .p2{
+            margin-left: 20px;
+            color: red;
+            font-size: 15px;
+
+        }
+        .range-input{
+            background-color: #d3d3d3;
+            height: 3px;
+            outline: none;
+            width: 100%;
+        }
+        label{
+            font-size: 15px;
+        }
+        
+    /* .range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 4px solid white;
+      background: #ff3f6c;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 0 2px #ff3f6c;
+    }
+     .range-input::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border: 4px solid white;
+      background: #ff3f6c;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 0 2px #ff3f6c;
+    } */
+     
+     .color-filter label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.color-filter input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.count {
+  color: #888;
+  font-size: 14px;
+  margin-left: 5px;
+}
+#sec3{
+    border: 2px none red;
+    height: auto;
+    width: 1100px;
+    margin-left: 270px;
+    margin-top: -1180px;
+    display: grid;
+    grid-template-columns: repeat(4,270px);
+    grid-template-rows: repeat(12,1fr);
+    gap: 20px;
+    padding: 10px;
+    
+
+
+}
+
+.box1{
+    border: 2px none black;
+    height: 390px;
+    width: 225px;
+    
+    /* background-image: url(https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14685736/2021/7/22/5d6a5da0-cb74-4f9c-99ae-729651abfa101626945052617-Kook-N-Keech-Unisex-Caps-2451626945052045-1.jpg);
+    background-position: 50% 75%; */
+
+}
+.box1:hover{
+    box-shadow: 0px 0px 10px rgb(196, 194, 194);
+
+}
+
+.box1>img{
+    height:75%;
+    width: 100%;
+
+}
+.h4{
+    line-height: 0px;
+}
+.s3{
+    font-size: 14px;
+    
+}
+.text p{
+    line-height: 1px;
+}
+.text a{
+    color: red;
+    font-size: 13px;
+
+}
+.text strike{
+    font-size: 14px;
+}
+
+
+.text{
+    border: 2px none red;
+    height: 90px;
+    width: 213px;
+    padding-left: 9px;
+}
+.rating{
+    border: 2px none purple;
+    width:50px;
+    background-color: white;
+   margin-left: 20px;
+   text-align: center;
+   padding: 1px 2px;
+    margin-top: -34px;
+    position: relative;
+}
+.rating>i{
+    font-size: 13px;
+    color: rgb(4, 154, 4);
+}
+  </style>
+</head>
+<body>
+    <header>
+        <div id="div"></div>
+        <div id="div1">
+            <a href="">MEN</a><a href="">WOMEN</a><a href="">KIDS</a><a href="">HOME</a><a href="">BEAUTY</a><a href="">GENZ</a><a href="">STUDIO</a>
+        </div>
+
+        <div id="sbox">
+            <i class="fa-solid fa-magnifying-glass search"></i>
+            <input type="text" placeholder= " Search for products brands and more">
+        </div>
+        <div id="div2">
+            <div class="d1">
+                
+                <i class="fa-regular fa-user"></i>
+                <a>profile</a>   
+                 
+                
+            </div>
+            <div class="d1">
+                <i class="fa-regular fa-heart"></i>   
+                <a>Wishlist</a> 
+            </div>
+            <div class="d1">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <a>Bag</a>
+
+            </div>
+        </div>
+       
+
+    </header>
+    <section id="sec1">
+        <div id="div3">
+            <p>Home/Accessories/ <strong>Myntra</strong></p>
+            <p ><strong>Myntra</strong> - 587 items</p>
+
+
+        </div>
+        <div id="div4">
+            <div id="d2">
+                <strong>FILTER</strong>
+                <strong id="s1">CLEAR ALL</strong>
+
+            </div>
+            <div id="d3">
+               <select  class="sel">
+                <option value="">Bundles</option>
+               </select>
+               <select class="sel" >
+                <option value="">Country of Orign</option>
+               </select>
+               <select class="sel">
+                <option value="">Materials</option>
+               </select>
+               <select class="sel">
+                <option value="">Net Qualitty Unit</option>
+               </select>
+               <select class="sel">
+                <option value="">Occasions</option>
+               </select>
+               <select class="sel">
+                <option value="">Patterns</option>
+               </select>
+               <select class="sel">
+                <option value="">Rating</option>
+               </select>
+               <strong id="s2">+6more</strong>
+               
+            </div>
+            <select name="" id="sel1">
+                <option value=""> Sort by: <strong>Recomended</strong></option>
+            </select>
+        </div>
+    </section>
+    <section id="sec2">
+        
+        <input type="radio" value="Men" id="m">
+        <label for="m">Men</label><br>
+       
+        <input type="radio"  value="female" >
+        <label >Female</label>
+        <hr>
+        <div class="d4">
+        <label for="">CATEGORIES</label>
+            <i class="fa-solid fa-magnifying-glass search"></i>
+        
+        </div><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Tshirts</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Tops</label> <br>
+
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Kurtas</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Earringa</label><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Shirts</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Flip Flops</label><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Heels</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Handbags</label>
+        <p class="p2">+262 more</p>
+        <hr>
+        <div class="d4">
+        <label for="">BRAND</label>
+            <i class="fa-solid fa-magnifying-glass search"></i>
+        
+        </div><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Roadster</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >StyleCast x Revolte</label> <br>
+
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">WROGN</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >DressBerry</label><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">Vritrax</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >HRX by Hrithik Roshan</label><br>
+        <input type="checkbox" value="Men" id="m">
+        <label for="m">O THREE</label><br>
+       
+        <input type="checkbox"  value="female" >
+        <label >Evanden</label>
+        <p class="p2">+7 more</p>
+        <hr>
+        <div class="d4">
+        <label for="">PRICE</label><br>
+        <input type="range" class="range-input" min="200" max="1000" value="900" >
+         <div class="price-value" id="price">₹200 - ₹900</div>
+            
+        
+        </div><br>
+        <hr>
+       
+        <div class="color-filter">
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #2f3a3f;"></span>
+            Black <span class="count">(119)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #b0b0b0;"></span>
+            Grey <span class="count">(67)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #007bff;"></span>
+            Blue <span class="count">(55)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #2e3a70;"></span>
+            Navy Blue <span class="count">(46)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #ffffff; border: 1px solid #ccc;"></span>
+            White <span class="count">(39)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #f7b2d9;"></span>
+            Pink <span class="count">(36)</span>
+        </label>
+        
+        <label>
+            <input type="checkbox">
+            <span class="color-dot" style="background-color: #d9534f;"></span>
+            Red <span class="count">(28)</span>
+        </label>
+        <p class="p2">+23 more</p>
+        </div>
+        <hr>
+        <div class="d4">
+        <label for="">DISCOUNT RANGE</label>
+        </div>
+        <br>
+          <input type="radio" value="Men" id="m">
+        <label for="m">20% and above</label><br>
+       
+        <input type="radio"  value="female" >
+        <label >30% and above</label><br>
+          <input type="radio" value="Men" id="m">
+        <label for="m">40% and above</label><br>
+       
+        <input type="radio"  value="female" >
+        <label >50% and above</label><br>
+          <input type="radio" value="Men" id="m">
+        <label for="m">60% and above</label><br>
+       
+        <input type="radio"  value="female" >
+        <label >70% and above</label><br>
+          <input type="radio" value="Men" id="m">
+        <label for="m">80% and above</label><br>
+    </section>
+    <section id="sec3">
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13698440/2025/7/2/f6cc7a67-a408-4724-98cf-63f1ff9bb0c41751437673352-Simple-Kind-To-Skin-Refreshing-Facial-Wash-150-ml-5041751437-14.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+         <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2274020/2024/6/28/ecca5ee1-bf1d-4a5c-8c4e-e6d8e2145a321719563731032NiveaCherryShineLongLastingMoisturisationCaringLipBalm48g1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">HRX by Hrithik Roshan</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+         <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8520515/2024/7/8/ef7f15f7-7673-4652-8437-ed1350a5314e1720434511292NiveaPomegranateShineCaringLipBalm1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+         <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/26022076/2025/4/23/1bcf630a-bb90-42af-9016-a59dbd6e4e4d1745407258387-WishCare-Ceramide-Tinted-Lip-Balm-With-SPF50-PA---5g-2581745-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+         <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15734046/2025/3/6/9d46ffd4-db75-4c4b-8784-972d978e25e01741261563049-Vaseline-Lip-Therapy-Tins-For-Moisturised--Soft-Lips-17g---R-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/4452075/2024/6/28/37fbbf10-df3f-4a4b-8b1b-7bbea89655c31719563676800PondsBrightMiracleDetoxFacewashwith10XPowerofCharcoal200gm1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2274026/2024/7/8/427fa795-4127-45cb-8840-89156efdbe141720434552656NiveaWomenLipBalmBlackberryShine48g1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19765352/2022/11/4/b554b7fc-9d64-4e7a-9598-032c67d187331667538268452BlueHeavenJellyButterHydratingLipBalmwithSheaButterVitaminE-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22880966/2025/5/31/0384991f-970c-4c20-8cf5-7840d5090e5e1748678255979-FoxTale-SPF-50-Glow-Sunscreen-with-PA-Vitamin-C--Niacinamide-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18277408/2025/4/17/402a0ac5-1a77-4ced-aabb-8cb40df724911744892240352-Mamaearth-Rice-Face-Wash-with-Rice-Water--Niacinamide-for-Gl-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8052339/2023/1/19/ca332263-e26a-48cc-806c-1f97e0dcc6b31674120425611-Maybelline-New-York-Cherry-Kiss-Baby-Lips-Lip-Balm-4-g-95716-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21913896/2025/4/4/d7d843b1-02c8-4c99-b1bf-1db5e409ad081743780140308-SUGAR-POP-Nourishing--Hydrating-Tinted-Lip-Balm-with-Shea-Bu-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/23725238/2024/4/11/e4c6238f-c2be-4da7-a29d-95be0498c2e21712838411649-Ponds-Bright-Beauty-Anti-Pigmentation-Serum---14ml-611171283-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2274021/2024/7/8/6362f0e8-acfd-4cbd-b4da-5e00799c14781720434528135NiveaWomenStrawberryShine24hMoistureLipBalmwithNaturalOilsRe1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/9352403/2022/9/27/a6d04521-3e80-4008-8882-fa00464cccdd1664260597194LakmeLipLoveChapstickSPF15LipCare-Strawberry1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/153915/2024/5/14/6ebfbd13-4f86-4e22-9a97-6153f28ef53f1715688047605-Lakme-Blush--Glow-Strawberry-Blast-Face-Wash---100-g-9601715-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13512550/2024/4/13/553283f5-db70-4549-b1a3-3ec116dd4a8f1712985526641-Reequil-Oil-Free-Moisturiser-for-Normal-Oily--Combination-Sk-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2274019/2024/6/28/7ac00d65-6e67-4f4e-ad8c-2fa954955ae81719563782161NiveaSoftRoseCaringLipBalm1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/24822154/2023/12/18/6a01b006-a5f2-4f8b-92d0-131d2f9295801702894995844-Ponds-Hydra-Light-Hyaluronic-Acid-Complex-2-Serum---14-ml-91-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11081560/2025/6/11/199b32a8-e1fd-4a66-b2eb-a19e047edb6a1749647621295-Mamaearth-Ubtan-Natural-Face-Wash-With-Turmeric--Saffron-For-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/29297666/2025/4/12/1c01f871-2609-4cc3-a04c-ce1ddb9766611744432641784-DR-SHETHS-Ceramide--Vitamin-C-Sunscreen-SPF-50-PA---30g-1331-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/24792812/2025/6/25/79b2fa2f-5b92-4807-b550-57a2a4dbc2291750846948201-The-Derma-co-1-Hyaluronic-Sunscreen-SPF50-Aqua-Gel-for-Oily--1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/24822154/2023/12/18/232f1b3a-c12f-44ed-b065-300c9f24a8211702894995803-Ponds-Hydra-Light-Hyaluronic-Acid-Complex-2-Serum---14-ml-91-5.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18892756/2025/4/4/b0bf4197-afc2-41be-b15e-3c9f027a4f941743780092731-SUGAR-POP-Nourishing-UV-Protection-Hydrating-Lip-Balm-45-g---1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/30205332/2024/7/13/c9f3c6e9-18bb-4b60-9ca9-0c35fc4422ef1720845881709FaceScrubandExfoliator1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27592942/2024/2/15/728f95cf-8779-4353-a615-c4054afc1b2e1707980285721BEARDODe-TanFacescrubforMen50gBlackheadTanRemovalCoffeeDetox1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13512586/2024/4/13/220fc293-72d6-4f75-8f8d-116e050f79c41712985755187-Reequil-Unisex-Ceramide--Hyaluronic-Acid-Moisturiser-For-Nor-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19765366/2022/11/4/3a528d81-0542-4c1a-9588-1567cf24543f1667538066937BlueHeavenJellyButterHydratingLipBalmwithSheaButterVitaminE-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/30789443/2025/4/10/2e842146-bc54-407b-8822-a525579b73e21744298197826-DOT--KEY-Barrier-Repair-Hydrating-Lip-Balm-SPF-50-45g-Strawb-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16900040/2023/9/6/182a89cf-d057-4c26-a25e-33d6ba0d065b1693992461489-Minimalist-Marula-Oil-Deep-Nourishment--Hydration-Moisturize-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14095352/2024/4/15/17ae1cd9-92c1-4864-b0c5-e69246375a721713173610541-Lakme-Vitamin-C-Day-Cream-50-g-2091713173610133-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/24967950/2023/9/14/9471f838-9dd2-472c-af54-1c900d47907a1694669810241FaceSunscreen1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/24822154/2023/12/18/13db8ec7-9c95-4996-a229-944abe0fc67e1702894995791-Ponds-Hydra-Light-Hyaluronic-Acid-Complex-2-Serum---14-ml-91-6.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2024/SEPTEMBER/13/Q5olhBeX_8cffda638ec749c68b44944e5f2259b3.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/9314861/2024/4/17/06793a40-cc08-4d1e-b2e2-64502e9232ea1713339030897-Biotique-Set-of-2-Papaya-Deep-Cleanse-Visibly-Glowing-Skin-F-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/29968969/2024/8/7/a239d6f0-533f-4323-8a8b-02a500fff3a91723024305350-Minimalist-SPF-50-Sunscreen-With-Niacinamide---30g-622172302-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21913898/2025/4/4/8729e28e-fffc-4628-ba20-0da197ae8b141743780150511-SUGAR-POP-Nourishing--Hydrating-Tinted-Lip-Balm-with-Shea-Bu-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13698456/2023/5/19/e9081f04-cf5c-479e-8c02-99685e5d15ab1684498940422-Simple-Kind-To-Skin-Moisturising-Facial-Wash-150-ml-77416844-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/32285741/2025/1/10/2aada844-f9c5-4a4c-94d1-c39564292f401736505211226DOTKEYWatermelonHyaluronicCoolingSunscreenWithSPF50PA-30g1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/24822154/2023/12/18/e25e0482-97cb-47a4-affc-9bfd1b992c871702894995815-Ponds-Hydra-Light-Hyaluronic-Acid-Complex-2-Serum---14-ml-91-4.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/24822154/2023/12/18/868b4766-f836-40b9-88ec-32bee03791b31702894995827-Ponds-Hydra-Light-Hyaluronic-Acid-Complex-2-Serum---14-ml-91-3.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/24822154/2023/12/18/714a1581-485f-45e4-a88b-32ab90f909801702894995768-Ponds-Hydra-Light-Hyaluronic-Acid-Complex-2-Serum---14-ml-91-11.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/24822154/2023/12/18/0879e945-0766-4d6a-be42-ed317c347c511702894995780-Ponds-Hydra-Light-Hyaluronic-Acid-Complex-2-Serum---14-ml-91-7.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        </div><div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27137674/2024/3/12/2fc66836-78a7-4434-a083-67189f6530341710221051903MamaearthBeetrootTinted100NaturalLipBalmWithBeetrootBeeswax-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8052337/2023/1/19/43bb19d6-24e2-429f-9d3c-ce65d38421ee1674120489338-Maybelline-New-York-Baby-Lips-Balm---Pink-Lolita-4-g-1171674-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+        <div class="box1">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/12126744/2024/5/14/905fce9f-23d6-45ca-98e2-82c12be350f11715688592798-Lakme-Blush--Glow-Kiwi-Gel-Face-Wash-With-100-Real-Kiwi-Extr-1.jpg" alt="" >
+            <div class="rating"><strong class="s3">4.3 </strong> <i class="fa-solid fa-star"></i>  </div>
+            <div class="text">
+            <h4 class="h4">Kook N Keech</h4>
+            <p>Unisex Embroidered Beanie</p>
+            <strong class="s3">Rs.377</strong>  <strike>Rs.389</strike>  <a>(58%offf)</a>
+            </div>
+        </div>
+
+
+    </section>
+    <footer style="display: flex; gap: 40px; background-color: #f3f3f3; padding: 30px; font-family: Arial, sans-serif; flex-wrap: wrap;">
+
+  
+  <div style="flex: 1; min-width: 200px;">
+    <h4 style="font-weight: bold; margin-bottom: 10px;">ONLINE SHOPPING</h4>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 5px; font-size: 14px;">Men</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Women</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Kids</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Home</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Beauty</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Genz</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Gift Cards</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Myntra Insider</li>
+    </ul>
+  </div>
+
+
+  <div style="flex: 1; min-width: 200px;">
+    <h4 style="font-weight: bold; margin-bottom: 10px;">CUSTOMER POLICIES</h4>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 5px; font-size: 14px;">Contact Us</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">FAQ</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">T&C</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Terms Of Use</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Track Orders</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Shipping</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Cancellation</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Returns</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Privacy Policy</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Grievance Redressal</li>
+    </ul>
+  </div>
+
+
+  <div style="flex: 1; min-width: 200px;">
+    <h4 style="font-weight: bold; margin-bottom: 10px;">USEFUL LINKS</h4>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="margin-bottom: 5px; font-size: 14px;">Blog</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Careers</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Site Map</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Corporate Information</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Whitehat</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Cleartrip</li>
+      <li style="margin-bottom: 5px; font-size: 14px;">Myntra Global</li>
+    </ul>
+  </div>
+
+  
+  <div style="flex: 1; min-width: 200px;">
+    <h4 style="font-weight: bold; margin-bottom: 10px;">EXPERIENCE APP</h4>
+    <div style="margin-bottom: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" width="120" style="margin-bottom: 8px;"><br>
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" width="120">
+    </div>
+    <div style="margin-top: 10px;">
+      <i class="fa fa-facebook-square" style="font-size: 24px; margin-right: 10px; color: #333;"></i>
+      <i class="fa fa-twitter-square" style="font-size: 24px; margin-right: 10px; color: #333;"></i>
+      <i class="fa fa-youtube-play" style="font-size: 24px; margin-right: 10px; color: #333;"></i>
+      <i class="fa fa-instagram" style="font-size: 24px; color: #333;"></i>
+    </div>
+  </div>
+
+</footer>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+   
+</body>
+</html>

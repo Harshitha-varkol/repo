@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .main{
+            display: flex;
+            overflow: hidden;
+        }
+        .pic{
+            position: relative;
+            width: 200px;
+            height: 350px;
+            overflow: hidden;
+            transform: skew(-15deg);
+            
+        }
+        .pic>img{
+            width: 120%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+        input{
+            border-color: rgb(182, 182, 173);
+            background-color: white;
+            font-weight: bold;
+            height:50px;
+            width:200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="height:640px;width:600px;margin-left:0%;text-align:center;">
+        <img height="150px" width="200px" src="https://images.seeklogo.com/logo-png/44/1/myntra-studio-logo-png_seeklogo-440575.png" alt="">
+        <h5 style="margin-top:-40px;font-size:15px;color:rgb(90, 83, 83);">Your daily inspiration for everything fashion</h5><br><br>
+        <div class="main" style="display: flex;gap:5px;">
+            <div class="pic">
+                <img src="https://c.ndtvimg.com/gws/2278/assets/1.jpeg?1619080517" alt="">
+            </div>
+            <div class="pic">
+                <img src="https://media.gettyimages.com/id/1490373886/photo/natural-beauty.jpg?s=612x612&w=gi&k=20&c=5oUgLQkGHJcIz32We4cIIrksBBBd2Hh3X7_BEYRtp0w=" alt="">
+            </div>
+            <div class="pic">
+                <img src="https://thefoomer.in/cdn/shop/products/jpeg-optimizer_PATP5125.jpg?v=1680162476" alt="">
+            </div>
+            <div class="pic">
+                <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWFuJTIwaW4lMjBzdWl0fGVufDB8fDB8fHww" alt="">
+            </div>
+        </div>
+        <br><br>
+        <input type="text" placeholder="  EXPLORE STUDIO  > ">
+    </div>
+</body>
+</html>

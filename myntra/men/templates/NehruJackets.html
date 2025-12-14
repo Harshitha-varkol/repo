@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Casual Shirts for Men</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+    }
+
+     *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Arial', 'Helvetica Neue', sans-serif;
+        }
+        header{
+            border: 2px none red;
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgb(168, 167, 167);
+        }
+
+        #div{
+            border: 2px none black;
+            height: 50px ;
+            width: 71px;
+            background-image: url(https://constant.myntassets.com/web/assets/img/MyntraWebSprite_27_01_2021.png);
+            /* background-size: auto; */
+            background-position: 10% 36%;
+        }
+        #div1{
+            border: 2px none black;
+            width: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+        #div1>a{
+            color: black;
+            font-weight: 500;
+            text-decoration: none;
+            
+
+        }
+        #sbox{
+            border: 2px none red;
+            height: auto;
+            width: 420px;
+            display: flex;
+            align-items: center;
+        }
+        .search{
+            font-size: 20px;
+            color: gray;
+            position: absolute;
+            z-index: 2;
+            padding-left: 16px;   
+        }
+        #sbox>input{
+            height: 11px;
+            width: 400px;
+            padding: 12px;
+            position: relative;
+        }
+        #sbox>input::placeholder{
+            font-size: 16px;
+            color: gray;
+            padding: 40px;
+        }
+
+        #div2{
+            height: auto;
+            width: 60px;
+        }
+        #d1{
+            height: auto;
+            width: 50px;
+
+        }
+        #d1>i{
+            color: black;
+        }
+        #div2{
+            border: 2px none red;
+            height: 40px;
+            width: 190px;
+            display: flex;
+            gap: 25px;
+        }
+        #div2 a{
+            font-weight: 500;
+        }
+        .d1{
+            border: 2px none black;
+            height: 45px;
+            width: 40px;
+            text-align: center;
+        }
+
+    .page-info {
+      padding: 15px 30px;
+      font-size: 14px;
+      background-color: #fff;
+      margin-top: 60px;
+    }
+
+    #filter-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 30px;
+      background-color: #fff;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    #filter-header p {
+      font-weight: bold;
+      margin-right: 20px;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      padding: 20px;
+      background-color: #fff;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar label {
+      display: block;
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .sidebar input[type='range'] {
+      width: 100%;
+    }
+
+    .color-circle {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid #aaa;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .product-section {
+      flex: 1;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .rows {
+      background-color: #fff;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    .rows img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .rows h4 {
+      font-size: 13px;
+      margin: 6px 0 2px;
+    }
+
+    .rows p {
+      margin: 3px 0;
+    }
+
+    .rows .price {
+      font-weight: bold;
+      color: red;
+    }
+
+    .rows .strike {
+      text-decoration: line-through;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .rows .discount {
+      color: orange;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .rows .rating {
+      background-color: #388e3c;
+      color: white;
+      font-size: 12px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      margin-right: 4px;
+    }
+    #footerdiv{
+      padding-left: 10%;
+      background-color: #f8f8f8;
+      padding-right: 10%;
+      /* border: 2px solid red; */
+      /* height: 700px; */
+      width: 100%;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .left, .right {
+      flex: 1;
+    }
+
+    .left h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #888686;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .left h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 20px 0 10px;
+    }
+
+    .left p {
+      line-height: 1.8;
+    }
+
+    .left strong {
+      font-weight: bold;
+    }
+
+    .right h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .price-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 5px 0;
+    }
+
+    .last-updated {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 14px;
+      color: #908c8c;
+    }
+
+    b {
+      font-weight: bold;
+    }
+      h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #938d8d;
+      margin-bottom: 10px;
+    }
+
+    b {
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-weight: 700;
+      color: #938d8d;
+      font-size: 15px;
+      margin-top: 40px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    em {
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+       .footer {
+      background-color: #f8f8f8;
+      padding: 40px 80px;
+      font-size: 14px;
+      color: #999a9d;
+    }
+
+    .foooter h1, p{
+      color: #938d8d;
+    }
+  
+    .footer-columns {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 30px;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      color: #938d8d;
+    }
+
+    .footer-column h4 {
+      font-weight: bold;
+      font-size: 13px;
+      color: #938d8d;
+      margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .app-icons {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .app-icons img {
+      width: 120px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 300px;
+     
+    }
+    .price-row{
+      color: #938d8d;
+    }
+    .footer-right div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-right img {
+      width: 40px;
+    }
+
+    .footer-note {
+      padding: 20px 0;
+      font-size: 12px;
+    }
+
+    .popular-searches {
+      padding: 20px 0 40px;
+    }
+
+    .popular-searches h4 {
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 15px;
+     color: #938d8d;
+    }
+
+    .popular-links {
+      color: #938d8d;
+    }
+
+    .popular-links span {
+      margin-right: 8px;
+      cursor: pointer;
+    }
+
+    .popular-links span:hover {
+      text-decoration: underline;
+    }
+    .light-hr {
+    border: none;
+    border-top: 1px solid #e2d7d7;
+    margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+ <header>
+        <div id="div"></div>
+        <div id="div1">
+            <a href="">MEN</a><a href="">WOMEN</a><a href="">KIDS</a><a href="">HOME</a><a href="">BEAUTY</a><a href="">GENZ</a><a href="">STUDIO</a>
+        </div>
+
+        <div id="sbox">
+            <i class="fa-solid fa-magnifying-glass search"></i>
+            <input type="text" placeholder= " Search for products brands and more">
+        </div>
+        <div id="div2">
+            <div class="d1">
+                <i class="fa-regular fa-user"></i>
+                <a>profile</a>   
+            </div>
+            <div class="d1">
+                <i class="fa-regular fa-heart"></i>   
+                <a>Wishlist</a> 
+            </div>
+            <div class="d1">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <a>Bag</a>
+
+            </div>
+        </div>
+       
+
+    </header>
+  <div class="page-info">
+    Home / Clothing / Shirts / <b>Nehru Jackets Collection</b><br>
+    <b>Nehru Jackets Collection
+ - 8168 items</b>
+  </div>
+
+  <div id="filter-header">
+    <p>FILTERS</p>
+    <div style="display: flex; gap: 20px;">
+      <p>Add-Ons</p>
+      <p>Bundles</p>
+      <p>Collar</p>
+      <p>Country of Origin</p>
+      <p>Fabrics</p>
+      <p>Fashion Trends</p>
+      <p>Features</p>
+      <input type="text" placeholder="Sort by: Recommended" />
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <h3>BRAND</h3>
+      <label><input type="checkbox"> HIGHLANDER</label>
+      <label><input type="checkbox"> Roadster</label>
+      <label><input type="checkbox"> Campus Sutra</label>
+      <label><input type="checkbox"> Mast & Harbour</label>
+      <label><input type="checkbox"> WROGN</label>
+      <label><input type="checkbox"> Louis Philippe</label>
+      <label><input type="checkbox"> Dennis Lingo</label> 
+      <hr class="light-hr">
+
+      <h3>PRICE</h3>
+      <input type="range" min="100" max="10100">
+      <p>₹100 - ₹10,100+</p>   
+      
+       <hr class="light-hr">
+
+      <h3>COLOR</h3>
+      <label><span class="color-circle" style="background: black;"></span>Black</label>
+      <label><span class="color-circle" style="background: white;"></span>White</label>
+      <label><span class="color-circle" style="background: blue;"></span>Blue</label>
+      <label><span class="color-circle" style="background: green;"></span>Green</label>
+      <label><span class="color-circle" style="background: red;"></span>Red</label>
+      <label><span class="color-circle" style="background: yellow;"></span>Yellow</label>
+      <label><span class="color-circle" style="background: gray;"></span>Gray</label>  
+       <hr class="light-hr">
+
+       <h3>DISCOUNT RANGE</h3>
+      <div class="discount-range">
+        <label><input type="radio" name="discount"> 10% and above</label>
+        <label><input type="radio" name="discount"> 20% and above</label>
+        <label><input type="radio" name="discount"> 30% and above</label>
+        <label><input type="radio" name="discount"> 40% and above</label>
+        <label><input type="radio" name="discount"> 50% and above</label>
+        <label><input type="radio" name="discount"> 60% and above</label>
+        <label><input type="radio" name="discount"> 70% and above</label>
+        <label><input type="radio" name="discount"> 80% and above</label>
+        <label><input type="radio" name="discount"> 90% and above</label>
+      </div>
+    </div>
+    
+
+    <div class="product-section">
+    
+      <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27216450/2024/1/27/68d06421-e142-4df4-81ac-a853ef02144c1706333234330MensjacquardwovendesignNehrujackatewithzariwork6.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+      <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/25241986/2023/9/28/78810091-516e-4d76-9fe2-94750fd472621695884864529KISAHWovenDesignNehruJacket1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27550588/2024/2/12/8c5a9efb-68f5-416f-a8e4-5a9ade6c84a71707743293458KisahMenGreyNehruJacket1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/34095732/2025/6/19/44735f72-45fd-4148-becd-1c7f6a751aea1750345876810-Turtle-Jacquard-Printed-Nehru-Jacket-2901750345876230-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18409574/2024/3/28/b9a6464a-ac26-4c5f-be48-36d2198681231711623107227-RARE-RABBIT-Men-Maroon-Textured-Jacket-7561711623107165-6.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/1/27/6b8a7c42-3fee-4159-b2cb-d4b0464bfafd1611752224396-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+      <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27347222/2024/2/2/b0ce71e1-3b8e-4edc-ab21-3538fc3d6dfc1706867794207SolidNehruJacket1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/25242016/2025/5/14/e0d73ef4-65dd-4253-adf9-68aa9893035a1747223335164-KISAH-Men-Printed-Zari--Regular-Fit-Nehru-Jacket-87217472233-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/33105615/2025/3/12/60243b9c-ac24-4ef6-b30b-ec9b52d2e14c1741776125124-KISAH-Ethnic-Motif-Nehru-Jacket-With-Pocket-Square-185174177-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/33105612/2025/3/12/4d67ffb5-24da-4889-8e1e-54cfcc4aa25e1741776007212-KISAH-Embroidered-Mandarin-Collar--Nehru-Jacket-686174177600-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+      <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/29177378/2024/4/25/7621f799-127d-408a-a803-d279f18bd26c1714033527637SolidNehruJacket1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+      <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21804242/2023/2/2/ed2fffe0-380e-4a62-a50a-d18039eaf55f1675315556829WovenDesignWaistcoat1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27347232/2024/2/2/1c193507-7782-4e86-bbd5-1f4ba93720f61706877012075SolidNehruJacket1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/29498510/2024/5/13/b548f75f-3460-465a-b53d-6c8a9b51692a1715592022744BAESDMenNehruJackets1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+        <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27216450/2024/1/27/68d06421-e142-4df4-81ac-a853ef02144c1706333234330MensjacquardwovendesignNehrujackatewithzariwork6.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+      <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/25241986/2023/9/28/78810091-516e-4d76-9fe2-94750fd472621695884864529KISAHWovenDesignNehruJacket1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27550588/2024/2/12/8c5a9efb-68f5-416f-a8e4-5a9ade6c84a71707743293458KisahMenGreyNehruJacket1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/34095732/2025/6/19/44735f72-45fd-4148-becd-1c7f6a751aea1750345876810-Turtle-Jacquard-Printed-Nehru-Jacket-2901750345876230-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/18409574/2024/3/28/b9a6464a-ac26-4c5f-be48-36d2198681231711623107227-RARE-RABBIT-Men-Maroon-Textured-Jacket-7561711623107165-6.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/1/27/6b8a7c42-3fee-4159-b2cb-d4b0464bfafd1611752224396-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+      <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27347222/2024/2/2/b0ce71e1-3b8e-4edc-ab21-3538fc3d6dfc1706867794207SolidNehruJacket1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/25242016/2025/5/14/e0d73ef4-65dd-4253-adf9-68aa9893035a1747223335164-KISAH-Men-Printed-Zari--Regular-Fit-Nehru-Jacket-87217472233-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/33105615/2025/3/12/60243b9c-ac24-4ef6-b30b-ec9b52d2e14c1741776125124-KISAH-Ethnic-Motif-Nehru-Jacket-With-Pocket-Square-185174177-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+       <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/33105612/2025/3/12/4d67ffb5-24da-4889-8e1e-54cfcc4aa25e1741776007212-KISAH-Embroidered-Mandarin-Collar--Nehru-Jacket-686174177600-1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+      <div class="rows">
+        <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/27347222/2024/2/2/b0ce71e1-3b8e-4edc-ab21-3538fc3d6dfc1706867794207SolidNehruJacket1.jpg" alt="">
+        <h4>Mast & Harbour</h4>
+        <p>Textured Cotton Shirt</p>
+        <p class="price">Rs. 879 <span class="strike">Rs. 1299</span> <span class="discount">(32% OFF)</span></p>
+        <p><span class="rating">4.2 ★</span> 1.2k</p>
+      </div>
+    </div>
+    
+  </div>
+  <div id="footerdiv">
+    <div class="container">
+  <div class="left">
+    <h2>BUY  Casual Shirts</h2>
+
+    <h3>STYLING THE Casual Shirts FOR MEN</h3>
+    <p>
+      T-shirts are without a doubt every man's favourite garment. They are versatile, stylish and can be worn in a million different ways. In fact, there are so many varieties when it comes to <b>t-shirts</b> for men that it could be difficult to settle on a particular kind while shopping. A t-shirt can be styled even with shirts for men to create fun ensembles that are semi-formal or smart casual. There is a t-shirt for men that can complement any kind of lowers that you might have in mind, be it <b>track pants, lounge shorts or innerwear</b>.
+    </p>
+    <p>
+      You can also select and style a t-shirt for men according to the season and occasion, which means that the same garment could be used to create completely different looks entirely depending on the scenario and weather. However, to be able to do this successfully, you must first have an understanding of styling t-shirts and your personal preference; this includes how you would like to project yourself. Read on to find out more.
+    </p>
+
+    <h3>STYLING A T-SHIRT FOR MEN</h3>
+    <p>
+      We have covered the basics and thrown in a couple of tricks to style a t-shirt for <b>men</b> in the best way, so read on and take notes.
+    </p>
+
+    <p><strong>Colours</strong><br>
+    When it comes to a t-shirt for men, there are a few colours which are essential in any wardrobe. These are the most basic colours which will set the tone for your collection; they are white, black, navy blue and grey. Apart from this, you can also add on dark shades of maroon, green and brown to mix and match with your <b>joggers</b> or <b>tracksuits</b>.
+    </p>
+
+    <p><strong>Fits</strong><br>
+    Generally speaking, the fits of t-shirts for men range from long-line, regular, slim, fitted and loose. There is no set rule in particular when it comes to choosing one over the other...
+    </p>
+  </div>
+
+  <div class="right">
+    <h3>MEN T-SHIRTS PRICE LIST</h3>
+    <div class="price-row"><strong>Men T-shirts</strong> <strong>PRICE (RS)</strong></div>
+    <div class="price-list">
+      <div class="price-row"><span>Powerlook Men Regular Fit Self Design Round Neck T-shirt</span><span>Rs. 1097</span></div>
+      <div class="price-row"><span>HERE&NOW Men Solid Drop-Shoulder Sleeves Cotton Casual Hooded T-shirt</span><span>Rs. 2024</span></div>
+      <div class="price-row"><span>Levis Men Soft Pure Cotton Round Neck Half Sleeve Tshirt</span><span>Rs. 311</span></div>
+      <div class="price-row"><span>U.S. Polo Assn. Men Red & Navy Blue Striped Comfort-Fit Lounge T-Shirt</span><span>Rs. 295</span></div>
+      <div class="price-row"><span>Jack & Jones Men Solid Polo Collar Cotton T-Shirt</span><span>Rs. 1749</span></div>
+      <div class="price-row"><span>U.S. Polo Assn. Embroidered Logo V-Neck Cotton Lounge T-shirts</span><span>Rs. 496</span></div>
+      <div class="price-row"><span>Levis Men Soft Pure Cotton Round Neck Half Sleeve Tshirt</span><span>Rs. 389</span></div>
+      <div class="price-row"><span>Nautica Pure Cotton Polo Collar T-shirt</span><span>Rs. 739</span></div>
+      <div class="price-row"><span>DAMENSCH Men Ultralight Basic Crew Pure Cotton Lounge T-Shirts</span><span>Rs. 527</span></div>
+      <div class="price-row"><span>Royal Enfield Men Yellow Reversible Printed Cotton T-shirt</span><span>Rs. 1080</span></div>
+    </div>
+    <div class="last-updated"><i>Data last updated on 06/06/2025</i></div>
+  </div>
+</div>
+ <h2>SELECT A T-SHIRT FOR MEN ONLINE</h2>
+  <p>We have an absolutely wide variety of t-shirts for men on Myntra and here are a few of our favourites to start you off in the right direction.</p>
+
+  <p><b>GAS Men Black Printed <span class="highlight">Round Neck T-shirt</span></b><br>
+  If you are all about that rocker chic look, then this t-shirt for men is surely up your alley. It has a round neckline, short sleeves and a graphic print in front. This can be paired with tapering <b>jeans</b>, sneakers and a leather strap watch.</p>
+
+  <p><b>Nike Men Blue Polo Collar T-shirt</b><br>
+  Whether you enjoy playing cricket or are a fan of the game, you should definitely have this piece in your collection. It is made of light-weight polyester and boasts Nikes DRI-FIT technology.</p>
+
+  <p><b>Polo Ralph Lauren Cotton Blend Fleece Pullover</b><br>
+  This t-shirt is inspired by old-school baseball tees and is washed to have a vintage look. The grey melange and navy colours complement cargo pants or lounge shorts and will look great paired with white sneakers.</p>
+
+  <p class="section-title">GET YOUR SHOPPING ON!</p>
+  <p>Visit Myntra and transform your closet with garments for every occasion. We bring you all the top brands at your fingertips, with the best discounts and a wide selection to pick from. So log in to Myntra today and get shopping on-the-go!</p>
+
+  <ul>
+    <li><em>WHAT ARE THE LATEST TRENDS IN MEN'S T-SHIRTS?</em></li>
+  </ul>
+  <p>Here are some of the latest trends in the men's T-shirt categories that you can shop from:</p>
+
+  <ul>
+    <li>Typography: Men's T-shirts have seen a new trend with culture-defining quotes printed on them. The minimalist look of the T-shirt makes them a perfect option for all sorts of events. They come in a variety of colours.</li>
+  </ul> <br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cbeJWezqKiM?si=ALVLLjr2OPJG-7GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  
+<div class="footer">
+  <div class="footer-columns">
+    <!-- Column 1 -->
+    <div class="footer-column">
+      <h4>ONLINE SHOPPING</h4>
+      <ul>
+        <li>Men</li>
+        <li>Women</li>
+        <li>Kids</li>
+        <li>Home</li>
+        <li>Beauty</li>
+        <li>Genz</li>
+        <li>Gift Cards</li>
+        <li>Myntra Insider</li>
+      </ul>
+
+      <h4>USEFUL LINKS</h4>
+      <ul>
+        <li>Blog</li>
+        <li>Careers</li>
+        <li>Site Map</li>
+        <li>Corporate Information</li>
+        <li>Whitehat</li>
+        <li>Cleartrip</li>
+      </ul>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-column">
+      <h4>CUSTOMER POLICIES</h4>
+      <ul>
+        <li>Contact Us</li>
+        <li>FAQ</li>
+        <li>T&amp;C</li>
+        <li>Terms Of Use</li>
+        <li>Track Orders</li>
+        <li>Shipping</li>
+        <li>Cancellation</li>
+        <li>Returns</li>
+        <li>Privacy policy</li>
+        <li>Grievance Redressal</li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-column">
+      <h4>EXPERIENCE MYNTRA APP ON MOBILE</h4>
+      <div class="app-icons">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+      </div>
+      <h4>KEEP IN TOUCH</h4>
+      <div class="social-icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+      </div>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-right">
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/3909/3909444.png" alt="Original">
+        <p><strong>100% ORIGINAL</strong> guarantee for all products at myntra.com</p>
+      </div>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/189/189755.png" alt="Return">
+        <p><strong>Return within 14days</strong> of receiving your order</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Searches -->
+  <div class="popular-searches">
+    <h4>POPULAR SEARCHES</h4>
+    <div class="popular-links">
+      <span>Dishant Patel</span> | 
+      <span>Men Sports Shoes</span> | 
+      <span>Adidas</span> | 
+      <span>Arrow</span> | 
+      <span>Fila</span> | 
+      <span>Online Shopping</span> | 
+      <span>Nike</span> | 
+      <span>Pepe Jeans</span> | 
+      <span>Puma</span> | 
+      <span>United Colors Of Benetton</span> |
+      <span>Fastrack</span> | 
+      <span>Shorts</span> | 
+      <span>Being Human</span> | 
+      <span>Woodland</span> | 
+      <span>Supra</span> | 
+      <span>Dresses</span> | 
+      <span>Men Shopping</span> | 
+      <span>Women Shopping</span> | 
+      <span>Blazers</span> | 
+      <span>Sherwani</span> | 
+      <span>Clothing</span> | 
+      <span>Jewellery</span> | 
+      <span>T Shirts</span> | 
+      <span>Shoes</span> | 
+      <span>Bags</span> | 
+      <span>Watches</span> | 
+      <span>Caps</span> | 
+      <span>Wrangler Shirts</span> |
+      <span>Adidas Tshirts</span> | 
+      <span>Roadster Shirts</span> | 
+      <span>Casual Shoes</span> | 
+      <span>Running Shoes</span>
+    </div>
+  </div>
+</div>
+
+</div>
+ 
+</body>
+</html>
