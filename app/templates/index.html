@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 0;
+            list-style: none;
+        }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .product-card h2 {
+            font-size: 1.2em;
+            margin: 0 0 5px 0;
+            color: #007bff;
+        }
+        .product-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .price {
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Products</h1>
+    <ul class="product-list">
+        {% for i in products %}
+        <li class="product-card">
+            <h2>{{ i.name }}</h2>
+            <p>Category: {{ i.category }}</p>
+            {% if i.image %}
+                <img src="{{ i.image.url }}" alt="{{ i.name }}">
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
+            <p>Description: {{ i.desc }}</p>
+            <p class="price">Price: ${{ i.price }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
